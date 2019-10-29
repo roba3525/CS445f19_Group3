@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1048</x>
-      <y>800</y>
+      <x>1192</x>
+      <y>912</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1304</x>
-      <y>800</y>
+      <x>1448</x>
+      <y>912</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -26,8 +26,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>944</x>
-      <y>800</y>
+      <x>1088</x>
+      <y>912</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -37,8 +37,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>352</x>
-      <y>296</y>
+      <x>496</x>
+      <y>408</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -48,8 +48,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>680</x>
-      <y>296</y>
+      <x>824</x>
+      <y>408</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -59,8 +59,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1080</x>
-      <y>288</y>
+      <x>1224</x>
+      <y>400</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -70,8 +70,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>528</x>
-      <y>488</y>
+      <x>672</x>
+      <y>600</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -81,19 +81,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>664</y>
-      <w>80</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>GameScore</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>200</x>
-      <y>664</y>
+      <x>344</x>
+      <y>776</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -103,8 +92,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>992</x>
-      <y>584</y>
+      <x>1136</x>
+      <y>696</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -114,8 +103,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1000</x>
-      <y>528</y>
+      <x>1144</x>
+      <y>640</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -125,8 +114,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>992</x>
-      <y>616</y>
+      <x>1136</x>
+      <y>728</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -136,8 +125,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>992</x>
-      <y>552</y>
+      <x>1136</x>
+      <y>664</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -147,8 +136,8 @@
   <element>
     <id>Text</id>
     <coordinates>
-      <x>1000</x>
-      <y>696</y>
+      <x>1144</x>
+      <y>808</y>
       <w>80</w>
       <h>40</h>
     </coordinates>
@@ -168,8 +157,8 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>976</x>
-      <y>728</y>
+      <x>1120</x>
+      <y>840</y>
       <w>64</w>
       <h>88</h>
     </coordinates>
@@ -179,8 +168,8 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1048</x>
-      <y>728</y>
+      <x>1192</x>
+      <y>840</y>
       <w>64</w>
       <h>88</h>
     </coordinates>
@@ -190,8 +179,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>936</x>
-      <y>824</y>
+      <x>1080</x>
+      <y>936</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -201,8 +190,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1040</x>
-      <y>824</y>
+      <x>1184</x>
+      <y>936</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -212,8 +201,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>192</x>
-      <y>720</y>
+      <x>336</x>
+      <y>832</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -223,8 +212,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>192</x>
-      <y>688</y>
+      <x>336</x>
+      <y>800</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -234,8 +223,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1072</x>
-      <y>312</y>
+      <x>1216</x>
+      <y>424</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -245,8 +234,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1072</x>
-      <y>344</y>
+      <x>1216</x>
+      <y>456</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -256,8 +245,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>672</x>
-      <y>320</y>
+      <x>816</x>
+      <y>432</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -267,8 +256,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>672</x>
-      <y>352</y>
+      <x>816</x>
+      <y>464</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -278,8 +267,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1296</x>
-      <y>824</y>
+      <x>1440</x>
+      <y>936</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -289,8 +278,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1296</x>
-      <y>856</y>
+      <x>1440</x>
+      <y>968</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -300,8 +289,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>344</x>
-      <y>320</y>
+      <x>488</x>
+      <y>432</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -311,8 +300,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>344</x>
-      <y>352</y>
+      <x>488</x>
+      <y>464</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -320,33 +309,10 @@ valign=center
     <additional_attributes/>
   </element>
   <element>
-    <id>Text</id>
-    <coordinates>
-      <x>328</x>
-      <y>632</y>
-      <w>104</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>PlayerScore
-/// DO NOT EDIT THE CODE BELOW
-customelement=
-//arithmetical skills
-drawLine(width/2,0,width,height/2)
-drawLine(width,height/2,width/2,height)
-drawLine(width/2,height,0,height/2)
-drawLine(0,height/2,width/2,0)
-halign=center
-valign=center
-
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>520</x>
-      <y>512</y>
+      <x>664</x>
+      <y>624</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -356,8 +322,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>520</x>
-      <y>544</y>
+      <x>664</x>
+      <y>656</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -367,8 +333,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>520</x>
-      <y>576</y>
+      <x>664</x>
+      <y>688</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -378,8 +344,8 @@ valign=center
   <element>
     <id>Text</id>
     <coordinates>
-      <x>496</x>
-      <y>264</y>
+      <x>640</x>
+      <y>376</y>
       <w>104</w>
       <h>80</h>
     </coordinates>
@@ -401,8 +367,8 @@ valign=center
   <element>
     <id>Text</id>
     <coordinates>
-      <x>328</x>
-      <y>512</y>
+      <x>472</x>
+      <y>624</y>
       <w>104</w>
       <h>80</h>
     </coordinates>
@@ -425,19 +391,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>472</x>
-      <y>688</y>
-      <w>96</w>
-      <h>32</h>
-    </coordinates>
-    <panel_attributes>_ScoreID_</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>472</x>
-      <y>720</y>
+      <x>336</x>
+      <y>864</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -447,8 +402,8 @@ valign=center
   <element>
     <id>Text</id>
     <coordinates>
-      <x>744</x>
-      <y>440</y>
+      <x>888</x>
+      <y>552</y>
       <w>96</w>
       <h>72</h>
     </coordinates>
@@ -470,8 +425,8 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>424</x>
-      <y>296</y>
+      <x>568</x>
+      <y>408</y>
       <w>88</w>
       <h>24</h>
     </coordinates>
@@ -482,8 +437,8 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>592</x>
-      <y>296</y>
+      <x>736</x>
+      <y>408</y>
       <w>104</w>
       <h>24</h>
     </coordinates>
@@ -493,8 +448,8 @@ lw=3</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>960</x>
-      <y>264</y>
+      <x>1104</x>
+      <y>376</y>
       <w>104</w>
       <h>80</h>
     </coordinates>
@@ -516,8 +471,8 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>752</x>
-      <y>296</y>
+      <x>896</x>
+      <y>408</y>
       <w>232</w>
       <h>24</h>
     </coordinates>
@@ -528,8 +483,8 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1056</x>
-      <y>296</y>
+      <x>1200</x>
+      <y>408</y>
       <w>40</w>
       <h>24</h>
     </coordinates>
@@ -540,8 +495,8 @@ lw=3</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>1168</x>
-      <y>776</y>
+      <x>1312</x>
+      <y>888</y>
       <w>104</w>
       <h>80</h>
     </coordinates>
@@ -563,8 +518,8 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1264</x>
-      <y>808</y>
+      <x>1408</x>
+      <y>920</y>
       <w>56</w>
       <h>24</h>
     </coordinates>
@@ -575,8 +530,8 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1120</x>
-      <y>808</y>
+      <x>1264</x>
+      <y>920</y>
       <w>64</w>
       <h>24</h>
     </coordinates>
@@ -586,8 +541,8 @@ lw=3</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>1032</x>
-      <y>760</y>
+      <x>1176</x>
+      <y>872</y>
       <w>384</w>
       <h>136</h>
     </coordinates>
@@ -608,8 +563,8 @@ lw=3
   <element>
     <id>Text</id>
     <coordinates>
-      <x>1176</x>
-      <y>552</y>
+      <x>1320</x>
+      <y>688</y>
       <w>104</w>
       <h>80</h>
     </coordinates>
@@ -631,19 +586,8 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1136</x>
-      <y>584</y>
-      <w>56</w>
-      <h>192</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>50.0;10.0;10.0;10.0;10.0;220.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1272</x>
-      <y>584</y>
+      <x>1416</x>
+      <y>720</y>
       <w>64</w>
       <h>24</h>
     </coordinates>
@@ -653,8 +597,8 @@ valign=center
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1320</x>
-      <y>584</y>
+      <x>1464</x>
+      <y>720</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -664,8 +608,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1312</x>
-      <y>608</y>
+      <x>1456</x>
+      <y>744</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -675,8 +619,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1312</x>
-      <y>640</y>
+      <x>1456</x>
+      <y>776</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -686,8 +630,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1312</x>
-      <y>672</y>
+      <x>1456</x>
+      <y>808</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -697,8 +641,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1312</x>
-      <y>704</y>
+      <x>1456</x>
+      <y>840</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -708,8 +652,8 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>816</x>
-      <y>480</y>
+      <x>960</x>
+      <y>592</y>
       <w>208</w>
       <h>64</h>
     </coordinates>
@@ -719,8 +663,8 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>480</y>
+      <x>744</x>
+      <y>592</y>
       <w>176</w>
       <h>32</h>
     </coordinates>
@@ -730,8 +674,8 @@ valign=center
   <element>
     <id>Text</id>
     <coordinates>
-      <x>704</x>
-      <y>544</y>
+      <x>848</x>
+      <y>656</y>
       <w>104</w>
       <h>80</h>
     </coordinates>
@@ -753,8 +697,8 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>800</x>
-      <y>528</y>
+      <x>944</x>
+      <y>640</y>
       <w>216</w>
       <h>72</h>
     </coordinates>
@@ -765,8 +709,8 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>496</y>
+      <x>744</x>
+      <y>608</y>
       <w>120</w>
       <h>104</h>
     </coordinates>
@@ -776,12 +720,12 @@ lw=3</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>656</x>
-      <y>648</y>
+      <x>800</x>
+      <y>760</y>
       <w>104</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>AlliedWith
+    <panel_attributes>Gives
 /// DO NOT EDIT THE CODE BELOW
 customelement=
 //arithmetical skills
@@ -797,45 +741,10 @@ valign=center
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>672</x>
-      <y>384</y>
-      <w>96</w>
-      <h>32</h>
-    </coordinates>
-    <panel_attributes>Capacity</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>272</x>
-      <y>664</y>
-      <w>72</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=-
-lw=3</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>424</x>
-      <y>664</y>
-      <w>72</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;-
-lw=3</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>232</x>
-      <y>544</y>
+      <x>376</x>
+      <y>656</y>
       <w>112</w>
       <h>136</h>
     </coordinates>
@@ -845,8 +754,8 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>424</x>
-      <y>496</y>
+      <x>568</x>
+      <y>608</y>
       <w>120</w>
       <h>72</h>
     </coordinates>
@@ -856,8 +765,8 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>752</x>
-      <y>536</y>
+      <x>896</x>
+      <y>648</y>
       <w>264</w>
       <h>168</h>
     </coordinates>
@@ -867,19 +776,19 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>160</x>
-      <y>664</y>
-      <w>512</w>
-      <h>144</h>
+      <x>320</x>
+      <y>784</y>
+      <w>496</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>50.0;10.0;10.0;10.0;10.0;160.0;590.0;160.0;590.0;30.0;620.0;30.0</additional_attributes>
+    <additional_attributes>30.0;10.0;10.0;10.0;10.0;150.0;570.0;150.0;570.0;20.0;600.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>520</x>
-      <y>384</y>
+      <x>664</x>
+      <y>496</y>
       <w>96</w>
       <h>72</h>
     </coordinates>
@@ -901,8 +810,8 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>752</x>
-      <y>832</y>
+      <x>896</x>
+      <y>944</y>
       <w>24</w>
       <h>24</h>
     </coordinates>
@@ -912,19 +821,19 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>304</y>
+      <x>704</x>
+      <y>416</y>
       <w>136</w>
       <h>96</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>150.0;10.0;110.0;10.0;110.0;70.0;40.0;70.0;10.0;100.0</additional_attributes>
+    <additional_attributes>150.0;10.0;110.0;10.0;110.0;70.0;70.0;70.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1144</x>
-      <y>456</y>
+      <x>1288</x>
+      <y>560</y>
       <w>88</w>
       <h>24</h>
     </coordinates>
@@ -934,8 +843,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1136</x>
-      <y>480</y>
+      <x>1280</x>
+      <y>584</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -945,8 +854,8 @@ valign=center
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1136</x>
-      <y>512</y>
+      <x>1280</x>
+      <y>616</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -954,23 +863,10 @@ valign=center
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1504</x>
-      <y>176</y>
-      <w>176</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>Notes:
-- Item Pictures
-- Sound for each bldg</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Text</id>
     <coordinates>
-      <x>1224</x>
-      <y>376</y>
+      <x>1368</x>
+      <y>488</y>
       <w>88</w>
       <h>80</h>
     </coordinates>
@@ -992,8 +888,8 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1152</x>
-      <y>280</y>
+      <x>1296</x>
+      <y>392</y>
       <w>128</w>
       <h>32</h>
     </coordinates>
@@ -1003,8 +899,8 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1152</x>
-      <y>296</y>
+      <x>1296</x>
+      <y>408</y>
       <w>136</w>
       <h>40</h>
     </coordinates>
@@ -1014,8 +910,8 @@ valign=center
   <element>
     <id>Text</id>
     <coordinates>
-      <x>408</x>
-      <y>408</y>
+      <x>552</x>
+      <y>520</y>
       <w>80</w>
       <h>64</h>
     </coordinates>
@@ -1037,8 +933,8 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1304</x>
-      <y>408</y>
+      <x>1448</x>
+      <y>520</y>
       <w>160</w>
       <h>416</h>
     </coordinates>
@@ -1049,8 +945,8 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>752</x>
-      <y>304</y>
+      <x>896</x>
+      <y>416</y>
       <w>488</w>
       <h>128</h>
     </coordinates>
@@ -1060,8 +956,8 @@ lw=3</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>992</x>
-      <y>424</y>
+      <x>1136</x>
+      <y>528</y>
       <w>96</w>
       <h>80</h>
     </coordinates>
@@ -1083,8 +979,8 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1080</x>
-      <y>456</y>
+      <x>1224</x>
+      <y>560</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -1094,20 +990,20 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1032</x>
-      <y>496</y>
+      <x>1176</x>
+      <y>600</y>
       <w>24</w>
-      <h>48</h>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=-
 lw=3</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1032</x>
-      <y>640</y>
+      <x>1176</x>
+      <y>752</y>
       <w>24</w>
       <h>72</h>
     </coordinates>
@@ -1117,8 +1013,8 @@ lw=3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1264</x>
-      <y>152</y>
+      <x>1688</x>
+      <y>640</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -1128,8 +1024,8 @@ lw=3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>232</x>
-      <y>424</y>
+      <x>376</x>
+      <y>536</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -1139,8 +1035,8 @@ lw=3</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1256</x>
-      <y>176</y>
+      <x>1680</x>
+      <y>664</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -1150,8 +1046,8 @@ lw=3</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>224</x>
-      <y>448</y>
+      <x>368</x>
+      <y>560</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -1161,8 +1057,8 @@ lw=3</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1256</x>
-      <y>208</y>
+      <x>1680</x>
+      <y>696</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -1172,8 +1068,8 @@ lw=3</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>224</x>
-      <y>480</y>
+      <x>368</x>
+      <y>592</y>
       <w>96</w>
       <h>32</h>
     </coordinates>
@@ -1183,8 +1079,8 @@ lw=3</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>1248</x>
-      <y>264</y>
+      <x>1392</x>
+      <y>376</y>
       <w>104</w>
       <h>80</h>
     </coordinates>
@@ -1206,8 +1102,8 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>432</y>
+      <x>624</x>
+      <y>544</y>
       <w>72</w>
       <h>72</h>
     </coordinates>
@@ -1218,8 +1114,8 @@ lw=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>304</x>
-      <y>432</y>
+      <x>448</x>
+      <y>544</y>
       <w>120</w>
       <h>24</h>
     </coordinates>
@@ -1229,12 +1125,12 @@ lw=3</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>1072</x>
-      <y>136</y>
+      <x>1464</x>
+      <y>616</y>
       <w>104</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>BuildingSong
+    <panel_attributes>TalkingNoise
 /// DO NOT EDIT THE CODE BELOW
 customelement=
 //arithmetical skills
@@ -1252,31 +1148,20 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1112</x>
-      <y>208</y>
-      <w>24</w>
-      <h>96</h>
+      <x>1216</x>
+      <y>648</y>
+      <w>264</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 lw=3</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1168</x>
-      <y>160</y>
-      <w>112</w>
-      <h>32</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;20.0;60.0;20.0;60.0;10.0;120.0;10.0</additional_attributes>
+    <additional_attributes>310.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>680</x>
-      <y>536</y>
+      <x>824</x>
+      <y>648</y>
       <w>160</w>
       <h>104</h>
     </coordinates>
@@ -1297,8 +1182,8 @@ lw=3
   <element>
     <id>Text</id>
     <coordinates>
-      <x>872</x>
-      <y>0</y>
+      <x>1016</x>
+      <y>192</y>
       <w>104</w>
       <h>80</h>
     </coordinates>
@@ -1323,19 +1208,19 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>536</x>
-      <y>32</y>
+      <x>680</x>
+      <y>224</y>
       <w>352</w>
-      <h>232</h>
+      <h>152</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;270.0;10.0;10.0;420.0;10.0</additional_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0;420.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>448</y>
+      <x>704</x>
+      <y>560</y>
       <w>24</w>
       <h>56</h>
     </coordinates>
@@ -1345,31 +1230,31 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>832</x>
-      <y>120</y>
-      <w>24</w>
-      <h>328</h>
+      <x>960</x>
+      <y>320</y>
+      <w>40</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;390.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0;30.0;210.0;30.0;280.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>832</x>
-      <y>72</y>
+      <x>976</x>
+      <y>264</y>
       <w>104</w>
-      <h>496</h>
+      <h>416</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 lw=3</panel_attributes>
-    <additional_attributes>110.0;10.0;110.0;600.0;10.0;600.0</additional_attributes>
+    <additional_attributes>110.0;10.0;110.0;500.0;10.0;500.0</additional_attributes>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>720</x>
-      <y>432</y>
+      <x>864</x>
+      <y>544</y>
       <w>144</w>
       <h>88</h>
     </coordinates>
@@ -1390,8 +1275,8 @@ lw=3
   <element>
     <id>Text</id>
     <coordinates>
-      <x>784</x>
-      <y>56</y>
+      <x>920</x>
+      <y>248</y>
       <w>104</w>
       <h>80</h>
     </coordinates>
@@ -1415,21 +1300,21 @@ valign=center
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>680</x>
-      <y>88</y>
-      <w>120</w>
-      <h>224</h>
+      <x>824</x>
+      <y>280</y>
+      <w>112</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>130.0;10.0;10.0;10.0;10.0;260.0</additional_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0;10.0;160.0</additional_attributes>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>328</x>
-      <y>248</y>
+      <x>472</x>
+      <y>360</y>
       <w>472</w>
-      <h>104</h>
+      <h>136</h>
     </coordinates>
     <panel_attributes>
 /// DO NOT EDIT THE CODE BELOW
@@ -1448,19 +1333,283 @@ lw=3
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>552</x>
+      <x>928</x>
+      <y>824</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>User</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>920</x>
+      <y>848</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>_UserID_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>920</x>
+      <y>880</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Username</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>920</x>
+      <y>912</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Password</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>920</x>
+      <y>976</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>CreatedOn</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>920</x>
+      <y>944</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Salt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1560</x>
+      <y>648</y>
+      <w>144</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>280</x>
+      <y>384</y>
+      <w>104</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>InRoom
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(width/2,0,width,height/2)
+drawLine(width,height/2,width/2,height)
+drawLine(width/2,height,0,height/2)
+drawLine(0,height/2,width/2,0)
+halign=center
+valign=center
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>336</y>
+      <w>520</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0;560.0;10.0;560.0;90.0;630.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>448</y>
+      <w>832</w>
+      <h>608</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>70.0;10.0;70.0;120.0;20.0;120.0;10.0;740.0;960.0;740.0;960.0;600.0;1020.0;600.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>632</x>
       <y>928</y>
-      <w>488</w>
+      <w>104</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>UserCharacters
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(width/2,0,width,height/2)
+drawLine(width,height/2,width/2,height)
+drawLine(width/2,height,0,height/2)
+drawLine(0,height/2,width/2,0)
+halign=center
+valign=center
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>832</y>
+      <w>216</w>
       <h>152</h>
     </coordinates>
-    <panel_attributes>explaining the two new aggregations :)
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;170.0;200.0;170.0;200.0;10.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>304</x>
+      <y>776</y>
+      <w>344</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0;10.0;240.0;410.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>736</x>
+      <y>488</y>
+      <w>400</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=3</panel_attributes>
+    <additional_attributes>480.0;10.0;430.0;10.0;430.0;60.0;90.0;60.0;90.0;110.0;10.0;110.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1120</x>
+      <y>464</y>
+      <w>64</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>ItemHint
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(width/2,0,width,height/2)
+drawLine(width,height/2,width/2,height)
+drawLine(width/2,height,0,height/2)
+drawLine(0,height/2,width/2,0)
+halign=center
+valign=center
 
-giving a person the exact item they want will for sure unlock a room with a printer in it
 
-giving a person an item they'll take might unlock a regular room they can look into
-
-i just put the aggregations around the relationships for space
-we can always change it later or talk to chadd!</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1176</x>
+      <y>488</y>
+      <w>136</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0;150.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1272</x>
+      <y>720</y>
+      <w>64</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=3</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>640</x>
+      <y>456</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Visited</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>368</x>
+      <y>448</y>
+      <w>80</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>PrinterIcon
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(width/2,0,width,height/2)
+drawLine(width,height/2,width/2,height)
+drawLine(width/2,height,0,height/2)
+drawLine(0,height/2,width/2,0)
+halign=center
+valign=center
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>504</y>
+      <w>24</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>408</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=3</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0;120.0;10.0</additional_attributes>
   </element>
 </diagram>
