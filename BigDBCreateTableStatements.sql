@@ -49,7 +49,7 @@ CREATE TABLE Buildings(
 
 CREATE TABLE Rooms (
   RoomID INT NOT NULL AUTO_INCREMENT,
-  Number INT NOT NULL,
+  Number VARCHAR NOT NULL,
   BuildingID INT NOT NULL,
   CONSTRAINT PK_Rooms PRIMARY KEY(RoomID),
   CONSTRAINT FK_Rooms_Buildings FOREIGN KEY(BuildingID) REFERENCES Buildings(BuildingID)
@@ -71,4 +71,20 @@ CREATE TABLE Printers (
   CONSTRAINT PK_Printers PRIMARY KEY(PrinterID),
   CONSTRAINT FK_Printers_ImageID FOREIGN KEY(ImageID) REFERENCES Images(ImageID),
   CONSTRAINT FK_Printers_RoomID FOREIGN KEY(RoomID) REFERENCES Rooms(RoomID)
+);
+
+CREATE TABLE AdjacentBuildings(
+  BuildingID INT NOT NULL,
+  AdjacentBuildingID INT NOT NULL,
+  CONSTRAINT PK_AdjacentBuildings PRIMARY KEY(BuildingID, AdjacentBuildingID),
+  CONSTRAINT FK_AdjacentBuildings_Building FOREIGN KEY(BuildingID) REFERENCES Buildings(BuildingID),
+  CONSTRAINT FK_AdjacentBuildings_AdjacentBuilding FOREIGN KEY(AdjacentBuildingID) REFERENCES Buildings(BuildingID)
+);
+
+CREATE TABLE PlayerItems(
+  PlayerID INT NOT NULL,
+  ItemID INT NOT NULL,
+  CONSTRAINT PK_PlayerItems PRIMARY KEY(PlayerID, ItemID),
+  CONSTRAINT FK_PlayerItems_PlayerID FOREIGN KEY(PlayerID) REFERENCES Players(PlayerID),
+  CONSTRAINT FK_PlayerItems_ItemID FOREIGN KEY(ItemID) REFERENCES Items(ItemID)
 );
