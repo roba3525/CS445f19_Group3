@@ -111,8 +111,8 @@ CREATE TABLE People(
   CONSTRAINT PK_People PRIMARY KEY(PersonID),
   CONSTRAINT FK_People_DialogueID FOREIGN KEY(DialogueID) REFERENCES DialogueOptions(DialogueID),
   CONSTRAINT FK_People_PrinterID FOREIGN KEY(PrinterID) REFERENCES Printers(PrinterID),
-  CONSTRAINT FK_People_ItemID FOREIGN KEY(ItemID) REFERENCES Items(ItemID)
-  CONSTRAINT FK_People_PictureID FOREIGN KEY(PictureID) REFERENCES Images(ImageID);
+  CONSTRAINT FK_People_ItemID FOREIGN KEY(ItemID) REFERENCES Items(ItemID),
+  CONSTRAINT FK_People_PictureID FOREIGN KEY(PictureID) REFERENCES Images(ImageID)
 ) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
 
 CREATE TABLE WillTakeItem(
