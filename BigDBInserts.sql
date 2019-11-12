@@ -76,6 +76,96 @@ INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (7, 6); --
 INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (7, 4); --repeat
 INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (7, 3); --repeat
 
+-- printer (just one for now)
+-- INSERT INTO Printers (Name, ImageID, RoomID) VALUES ("The TIC",  ,5);
+
+--we inserting npc's (people, professors, students)
+-- people
+-- shereen
+-- INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID) VALUES (Shereen, Khoja); --pic done
+
+-- chadd
+-- INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID) VALUES (Chadd, Williams); --pic done
+
+-- doug
+-- INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID) VALUES (Doug, Ryan); -- pic done
+
+-- chris lane
+-- INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID) VALUES (Chris, Lane); -- pic done
+
+-- audrey 
+-- INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID) VALUES (Audrey, Lincoln); -- pic submitted
+
+-- cooper
+-- INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID) VALUES (Cooper, Delay); -- pic done
+
+--sam
+-- INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID) VALUES (Sam, Sindt); -- pic done
+
+-- julian
+--INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID) VALUES (Julian, Bunch);
+
+-- thomas
+-- INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID) VALUES (Thomas, Robasciotti); -- pic done
+
+-- mystery student
+-- INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID) VALUES (Mystery, Student); -- pic done
+
+-- megan
+-- INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID) VALUES (Megan, DeYoung);
+
+-- chougg
+-- INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID) VALUES (Chugg, Ryams); -- pic done
+
+-- larry
+-- INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID) VALUES (Larry, Jensen);
+
+--sarah
+-- INSERT INTO People (FName, LName, SoundID, DialogueID, ItemID, PrinterID) VALUES (Sarah, Amano); -- pic submitted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
