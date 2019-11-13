@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>CS Dept | The Game</title>
+</head>
+
+<body>
+<div id="container">
+		<div id="header">
+      <img src="images/Pacific_University_logo.svg.png" alt="Pacific University Logo" height="100%" />
+      <h1>CS Dept : The Game</h1>
+    </div>   
+    <div id="menu">
+      &nbsp;
+    </div>
+    <div id="content">
+      <div id="content_top"></div>
+      <div id="content_main">
+         <p>
+          Please enter the following information to create your account.
+          <br>
+          <br>
+          If you already have an account, please <a href="Login.html"><i>login.</i></a>
+         </p>
+         <br>
+         <form method="post" name="frmCreateAccount" action=addUser.php>
+          <span style="display: block;">
+            Create a Username: 
+            <input name="txtUsername" size="25" type="text" title="Please limit to under 25 alphanumeric characters." >
+          </span>
+          <br>
+          <span style="display:block;">
+            Create a Password:
+            <input name="txtPassword" size="25" type="password" title="Don't use an important password...this is a class assignment, not a bank.">
+          </span>
+          <br>
+          <span style="display: inline;">
+            <input type="submit" name="btnCreateAccount" value="Submit"> 
+            &nbsp;
+            <button id="Cancel" onclick="window.location.href='Welcome.html';return false;">Cancel</button>
+          </span>
+        </form>
+      </div>
+      <div id="content_bottom"></div>
+      <div id="footer"><h3><a href="http://www.bryantsmith.com">florida web design</a></h3></div>
+      </div>
+      <div id="leftmenu">
+        <div id="leftmenu_top"></div>
+        <div id="leftmenu_main"></div>
+        <div id="leftmenu_bottom"></div>
+      </div>
+   </div>
+  </body>
+</html>
