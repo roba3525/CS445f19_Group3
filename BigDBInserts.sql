@@ -258,15 +258,42 @@ VALUES (Julian, Bunch, 19, 6, 1, 20);
 
 
 -- Professors
-INSERT INTO Professors (ProfID) VALUES (1);
-INSERT INTO Professors (ProfID) VALUES (2);
-INSERT INTO Professors (ProfID) VALUES (3);
-INSERT INTO Professors (ProfID) VALUES (4);
+INSERT INTO Professors (ProfID) VALUES (1); --shereen
+INSERT INTO Professors (ProfID) VALUES (2); -- chadd
+INSERT INTO Professors (ProfID) VALUES (3); -- doug
+INSERT INTO Professors (ProfID) VALUES (4); -- CL
+
+-- Students
+--INSERT INTO Students (StudentID, RankID) VALUES (5, );
+--INSERT INTO Students (StudentID, RankID) VALUES (6, );
+--INSERT INTO Students (StudentID, RankID) VALUES (7, );
+--INSERT INTO Students (StudentID, RankID) VALUES (8, );
+--INSERT INTO Students (StudentID, RankID) VALUES (9, );
+--INSERT INTO Students (StudentID, RankID) VALUES (10, );
+--INSERT INTO Students (StudentID, RankID) VALUES (11, );
+--INSERT INTO Students (StudentID, RankID) VALUES (13, );
+--INSERT INTO Students (StudentID, RankID) VALUES (14, );
+
+--Assignments
+-- INSERT INTO Assignments (AssignmentNumber, Title, DueDate) VALUES (1, "Craps", '2019-11-19');
+-- INSERT INTO Assignments (AssignmentNumber, Title, DueDate) VALUES (3, "Hash Table", '2019-11-26');
+-- INSERT INTO Assignments (AssignmentNumber, Title, DueDate) VALUES (5, "Sprint Report", '2019-11-20');
+--INSERT INTO Assignments (AssignmentNumber, Title, DueDate) VALUES (7, "Hall of Fame and Shame", '2019-11-24');
+--INSERT INTO Assignments (AssignmentNumber, Title, DueDate) VALUES (2, "ER Diagram", '2019-11-20');
+
+-- Classes
+--INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 150: Intro to Computer Science", 12, 4, 1);
+--INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 150: Intro to Computer Science", 12, 3, 1);
+--INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 300: DataStructures", 16, 2, 2);
+--INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 493: Capstone", 4, 1, 3);
+--INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 315: HCI", 20, 1, 4);
+--INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 445: Databases", 6, 2, );
 
 
 
-
-
+--Will Take Item
+--INSERT INTO WillTakeItem (PersonID, ItemID, RoomID) VALUES (11, 7, );
+--INSERT INTO WillTakeItem ()
 
 
 
