@@ -159,6 +159,36 @@ VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/chuggforgame.png'), "mime/p
 INSERT INTO Images (Image, type) -- 26
 VALUES (LOAD_FILE('/tmp/g3/Pictures/g3DBPhotos/printer.PNG'), "mime/png");
 
+-- dialogue
+--julians (end at 25)
+INSERT INTO DialogueOptions (Phrase) VALUES ("I mean I'll take this...Thanks!"); --26
+INSERT INTO DialogueOptions (Phrase) VALUES ("Go get some real food...");
+INSERT INTO DialogueOptions (Phrase) VALUES ("If only this was a Harry Potter wand!");
+INSERT INTO DialogueOptions (Phrase) VALUES ("Corn is good, but watermelon is better!");
+INSERT INTO DialogueOptions (Phrase) VALUES ("I've already stapled and turned in my assignment");
+INSERT INTO DialogueOptions (Phrase) VALUES ("I have an Android, sorry.");
+INSERT INTO DialogueOptions (Phrase) VALUES ("I'm not helping you with that corrupt SSD. I'm off the clock!");
+INSERT INTO DialogueOptions (Phrase) VALUES ("Oh! You must have heard about my databases project!");
+INSERT INTO DialogueOptions (Phrase) VALUES ("Nice.. maybe now my code will build.");
+INSERT INTO DialogueOptions (Phrase) VALUES ("That's a little dangerous, isn't it?");
+INSERT INTO DialogueOptions (Phrase) VALUES ("`~~~~<^%%% [REDACTED]``//>,**");
+INSERT INTO DialogueOptions (Phrase) VALUES ("I can't even see this marker's juice...");
+INSERT INTO DialogueOptions (Phrase) VALUES ("I grew up in a Star Trek household...");
+INSERT INTO DialogueOptions (Phrase) VALUES ("hmmmmmmmm");
+INSERT INTO DialogueOptions (Phrase) VALUES ("Can I make tea with this water?");
+INSERT INTO DialogueOptions (Phrase) VALUES ("o7");
+INSERT INTO DialogueOptions (Phrase) VALUES ("Did Audrey put you up to this?? My plants are still technically alive!");
+
+
+
+
+
+
+
+
+
+
+
 
 --item inserts
 INSERT INTO Items (Name, Weight, ImageID, ItemHintID)
@@ -193,7 +223,6 @@ VALUES ("Ear of Corn", 1, 10, 10);
 
 INSERT INTO Items (Name, Weight, ImageID, ItemHintID)
 VALUES ("Watering Can", 1, 11, 11);
-
 
 -- printer (just one for now)
 INSERT INTO Printers (Name, ImageID, RoomID) VALUES ("The TIC", 26 ,5);
@@ -291,14 +320,71 @@ INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 150: Intro 
 INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 300: DataStructures", 16, 2, 2);
 INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 493: Capstone", 4, 1, 3);
 INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 315: HCI", 20, 1, 4);
-INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 445: Databases", 6, 2, );
+INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 445: Databases", 6, 2, 5);
 
-
+INSERT INTO DialogueOptions (Phrase) VALUES ()
 
 --Will Take Item
---INSERT INTO WillTakeItem (PersonID, ItemID, RoomID) VALUES (11, 7, );
---INSERT INTO WillTakeItem ()
+--shereen
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (1, 5, 28); 
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (1, 9, 17, 26); -- unlocks Scott218 (WICS room)
 
+--chadd
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (2, 4, 6, 26); --unlocks his office
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (2, 9, 12, 26); -- unlocks marsh lab
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (2, 11, 42); -- "did audrey put you up to this?" 
+--doug
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (3, 1, 15, 27); -- unlocks boxer food share "you need to go get some real food"
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (3, 9, 14, 26); -- unlocks hallick's office
+
+--chris lane
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (4, 7, 10, 26); -- unlocks the 24 hour room
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (4, 3, 20, 26); -- unlocks the grove
+
+--audrey
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (5, 9, 17, 26); --unlocks the WICS
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (5, 10, 11, 29); 
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (5, 3, 30); -- "oh I've already stapled and turned in my assignment"
+
+-- cooper
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (6, 6, 31);
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (6, 6, 9, 26);
+
+--sam
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (7, 4, 32);
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (7, 2, 2, 33); -- pokeball
+
+-- julian
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (8, 8, 8, 34); 
+
+-- thomas
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (9, 5, 35);
+
+-- mystery student
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (10, 1, 36);
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (10, 2, 36);
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (10, 3, 36);
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (10, 5, 36);
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (10, 6, 36);
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (10, 7, 36);
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (10, 8, 36);
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (10, 9, 36);
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (10, 10, 36);
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (10, 11, 36);
+
+-- megan
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (11, 7, 16, 37);
+INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (11, 5, 38);
+
+-- chougg
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (12, 2, 5, 39);
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (12, 4, 6, 39);
+
+--larry
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (13, 11, 1, 40);
+
+--sarah
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (14, 3, 7, 41);
 
 
 

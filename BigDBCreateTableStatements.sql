@@ -119,10 +119,12 @@ CREATE TABLE WillTakeItem(
   PersonID INT NOT NULL,
   ItemID INT NOT NULL,
   RoomID INT,
+  DialogueID INT NOT NULL,
   CONSTRAINT PK_WillTakeItem PRIMARY KEY(PersonID, ItemID),
   CONSTRAINT FK_WillTakeItem_PersonID FOREIGN KEY(PersonID) REFERENCES People(PersonID),
   CONSTRAINT FK_WillTakeItem_ItemID FOREIGN KEY(ItemID) REFERENCES Items(ItemID),
   CONSTRAINT FK_WillTakeItem_RoomID FOREIGN KEY(RoomID) REFERENCES Rooms(RoomID),
+  CONSTRAINT FK_WillTakeItem_DialogueID FOREIGN KEY(DialogueID) REFERENCES DialogueOptions(DialogueID),
   CONSTRAINT U_RoomID UNIQUE(RoomID)
 ) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
 
