@@ -6,6 +6,7 @@
   // Project: 		In Class PDO Examples
   // Description: add a user to the DB
  
+  require_once 'basicErrorHandling.php';
 	require_once 'connDB.php';
 
 	if( (isset($_POST['txtUsername']) &&
@@ -21,14 +22,16 @@
 		$dbh=db_connect();
 		try
   	{
-			$sth = $dbh->prepare("INSERT INTO  Users VALUES (:user,:pass,:salt, :created)");
+			$sth = $dbh->prepare("INSERT INTO Users(Username, Password, Salt, CreatedOn) VALUES (:user,:pass,:salt,:created)");
 		
 			$hashedPW = crypt($passwd . $salt, '$2y$07$8d88bb4a9916b302c1c68c$');
-	
+      
+      $date = date('y/m/d');
+      
 			$sth->bindValue(":user",$user);
 			$sth->bindValue(":pass",$hashedPW);
 			$sth->bindValue(":salt",$salt);
-      $sth->bindValue(":created",$date("y/m/d"));
+      $sth->bindValue(":created",$date);
 		
 		
 			$sth->execute();
@@ -41,7 +44,7 @@
    } 
 		
 		db_close($dbh);
-		print "User " . $user ." added";
+		header('Location: Login.html');
 	}
 		
 	

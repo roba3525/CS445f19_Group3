@@ -6,10 +6,11 @@
   // Class:				CS 445	
   // Project: 		In Class PDO Examples
   // Description: Authenticate a user
- session_start();
+ require_once 'basicErrorHandling.php';
  require_once 'connDB.php';
  require_once 'queryValidateUser.php';
  
+session_start();
 $_SESSION['VALID'] = 0;
 
 if(  ( 	isset($_POST['txtUser']) &&
@@ -26,11 +27,11 @@ if(  ( 	isset($_POST['txtUser']) &&
 	{
 		$_SESSION['VALID'] = 1;
 		
-		header('Location: loggedIn.php');
+		header('Location: playerOptions.php');
 	}
 	else
 	{
-		header('Location: login.html');
+		header('Location: Login.html');
 		
 	}
 }

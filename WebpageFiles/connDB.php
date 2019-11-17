@@ -9,7 +9,7 @@
    function db_connect ()
    {
      $dbh = new PDO("mysql:host=127.0.0.1;dbname=db_group3_f19", 
-    	"username", "passwd");
+    	"YOUR_PUNETID_HERE", "YOUR_PASSWORD_HERE");
 		 $dbh->setAttribute (PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
      return ($dbh);

@@ -23,8 +23,8 @@
 	
 		$hashedPW = crypt($passwd . $salt, '$2y$07$8d88bb4a9916b302c1c68c$');
 	
-		$sth = $dbh -> prepare("SELECT * FROM users WHERE
-				 	username = :user and passwd = :pass");
+		$sth = $dbh -> prepare("SELECT * FROM Users WHERE
+				 	Username = :user and Password = :pass");
 		$sth -> bindValue(":user", $user);
 		$sth -> bindValue(":pass", $hashedPW);
 		$sth -> execute();

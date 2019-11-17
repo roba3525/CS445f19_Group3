@@ -10,8 +10,8 @@
 	{
 		$retVal = "NONE";
 		
-		$sth = $dbh -> prepare("SELECT salt FROM users WHERE
-				 	username = :user");
+		$sth = $dbh -> prepare("SELECT Salt FROM Users WHERE
+				 	Username = :user");
 		$sth -> bindValue(":user", $user);
 		$sth -> execute();
 		if (1 == $sth -> rowCount())
