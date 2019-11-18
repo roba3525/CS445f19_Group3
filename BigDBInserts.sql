@@ -1,82 +1,83 @@
+
 -- building inserts (just name)
 
-INSERT INTO Buildings (Name) VALUES ("Cascade"); --1
-INSERT INTO Buildings (Name) VALUES ("Strain"); --2
-INSERT INTO Buildings (Name) VALUES ("Price"); --3
-INSERT INTO Buildings (Name) VALUES ("Library"); --4
-INSERT INTO Buildings (Name) VALUES ("Marsh"); --5
-INSERT INTO Buildings (Name) VALUES ("Scott"); --6
-INSERT INTO Buildings (Name) VALUES ("UC"); --7
+INSERT INTO Buildings (Name) VALUES ("Cascade");  -- 1
+INSERT INTO Buildings (Name) VALUES ("Strain"); -- 2
+INSERT INTO Buildings (Name) VALUES ("Price"); -- 3
+INSERT INTO Buildings (Name) VALUES ("Library"); -- 4
+INSERT INTO Buildings (Name) VALUES ("Marsh"); -- 5
+INSERT INTO Buildings (Name) VALUES ("Scott"); -- 6
+INSERT INTO Buildings (Name) VALUES ("UC"); -- 7
 
 -- rooms inserts (name, buildingid)
 
---cascade
+-- cascade
 INSERT INTO Rooms (Name, BuildingID) VALUES ("Lobby", 1);
 INSERT INTO Rooms (Name, BuildingID) VALUES ("1st Floor Lounge", 1);
 
---strain
+-- strain
 INSERT INTO Rooms (Name, BuildingID) VALUES ("Strain 222", 2);
 INSERT INTO Rooms (Name, BuildingID) VALUES ("Shereen's Office", 2);
 INSERT INTO Rooms (Name, BuildingID) VALUES ("Doug's Office", 2);
 INSERT INTO Rooms (Name, BuildingID) VALUES ("Chadd's Office", 2);
 
---price
+-- price
 INSERT INTO Rooms (Name, BuildingID) VALUES ("Chris Lane's Office", 3);
-INSERT INTO Rooms (Name, BuildingID) VALUES ("Math Lab");
+INSERT INTO Rooms (Name, BuildingID) VALUES ("Math Lab", 3);
 
---library
+-- library
 INSERT INTO Rooms (Name, BuildingID) VALUES ("Front Desk", 4);
 INSERT INTO Rooms (Name, BuildingID) VALUES ("24 Hour Room", 4);
 INSERT INTO Rooms (Name, BuildingID) VALUES ("Conference Room", 4);
 
---marsh
+-- marsh,
 INSERT INTO Rooms (Name, BuildingID) VALUES ("Marsh Lab", 5);
 INSERT INTO Rooms (Name, BuildingID) VALUES ("The TIC", 5);
 INSERT INTO Rooms (Name, BuildingID) VALUES ("Hallick's Office", 5);
 
---scott
+-- scott
 INSERT INTO Rooms (Name, BuildingID) VALUES ("Boxer Food Share", 6);
 INSERT INTO Rooms (Name, BuildingID) VALUES ("Scott 204", 6);
 INSERT INTO Rooms (Name, BuildingID) VALUES ("Scott 218", 6);
 
---the uc
+-- the uc
 INSERT INTO Rooms (Name, BuildingID) VALUES ("The Pod", 7);
 INSERT INTO Rooms (Name, BuildingID) VALUES ("The Mailroom", 7);
 INSERT INTO Rooms (Name, BuildingID) VALUES ("The Grove", 7);
 
 
 -- --- adjacent buildings (BuildingID, AdjacentBuildingID)
---adjacent to cascade
+-- adjacent to cascade
 INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (1, 2);
 
---adjacent to strain
+-- adjacent to strain
 INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (2, 1); -- repeat
 INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (2, 3);
 
---adjacent to price
+-- adjacent to price
 INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (3, 2); -- repeat
 INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (3, 4); 
 INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (3, 7);
 
---adjacent to library
+-- adjacent to library
 INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (4, 3); -- repeat
 INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (4, 7);
 INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (4, 5);
 
---adjacent to marsh
-INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (5, 4); --repeat
+-- adjacent to marsh
+INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (5, 4); -- repeat
 INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (5, 6);
 
---adjacent to scott
-INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (6, 5); --repeat
+-- adjacent to scott
+INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (6, 5); -- repeat
 INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (6, 7);
 
---adjacent to the uc
-INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (7, 6); --repeat
-INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (7, 4); --repeat
-INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (7, 3); --repeat
+-- adjacent to the uc
+INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (7, 6); -- repeat
+INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (7, 4); -- repeat
+INSERT INTO AdjacentBuildings (BuildingID, AdjacentBuildingID) VALUES (7, 3); -- repeat
 
---image inserts
+-- image inserts
 -- item icons
 INSERT INTO Images (Image, Type) -- 1
 VALUES (LOAD_FILE('/tmp/g3/Pictures/g3DBPhotos/Doritos.png'), "mime/png");
@@ -109,54 +110,54 @@ INSERT INTO Images (Image, Type) -- 10
 VALUES (LOAD_FILE('/tmp/g3/Pictures/g3DBPhotos/Corn.png'), "mime/png");
 
 INSERT INTO Images (Image, Type) -- 11
-VALUES (LOAD_FILE('/tmp/g3/Pictures/g3DBPhotos/WateringCan'), "mime/png");
+VALUES (LOAD_FILE('/tmp/g3/Pictures/g3DBPhotos/WateringCan.png'), "mime/png");
 
 -- cs people icons
---chadd
-INSERT INTO Images (Image, type) -- 12
+-- chadd
+INSERT INTO Images (Image, Type) -- 12
 VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/chadd2.png'), "mime/png");
---cooper
-INSERT INTO Images (Image, type) -- 13
-VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/cooper.png', "mime/png");
---larry
-INSERT INTO Images (Image, type) -- 14
+-- cooper
+INSERT INTO Images (Image, Type) -- 13
+VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/cooper.png'), "mime/png");
+-- larry
+INSERT INTO Images (Image, Type) -- 14
 VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/larry.png'), "mime/png");
---sam
-INSERT INTO Images (Image, type)-- 15
+-- sam
+INSERT INTO Images (Image, Type)-- 15
 VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/sam.png'), "mime/png");
---doug
-INSERT INTO Images (Image, type)-- 16
+-- doug
+INSERT INTO Images (Image, Type)-- 16
 VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/doug.png'), "mime/png");
---megan
-INSERT INTO Images (Image, type)-- 17
+-- megan
+INSERT INTO Images (Image, Type)-- 17
 VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/megan.png'), "mime/png");
---shereen
-INSERT INTO Images (Image, type) -- 18
+-- shereen
+INSERT INTO Images (Image, Type) -- 18
 VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/shereen.png'), "mime/png");
---chris lane
-INSERT INTO Images (Image, type) -- 19
+-- chris lane
+INSERT INTO Images (Image, Type) -- 19
 VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/chrislane.png'), "mime/png");
---julian
-INSERT INTO Images (Image, type) -- 20
+-- julian
+INSERT INTO Images (Image, Type) -- 20
 VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/julian.png'), "mime/png");
---mystery student
-INSERT INTO Images (Image, type) -- 21
+-- mystery student
+INSERT INTO Images (Image, Type) -- 21
 VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/mysterystudent.png'), "mime/png");
---thomas
-INSERT INTO Images (Image, type) -- 22
+-- thomas
+INSERT INTO Images (Image, Type) -- 22
 VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/thomas.png'), "mime/png");
---sarah
-INSERT INTO Images (Image, type) -- 23
+-- sarah
+INSERT INTO Images (Image, Type) -- 23
 VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/sarah.png'), "mime/png");
---audrey
-INSERT INTO Images (Image, type) -- 24
+-- audrey
+INSERT INTO Images (Image, Type) -- 24
 VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/audrey.png'), "mime/png");
 -- chugg
-INSERT INTO Images (Image, type) -- 25
+INSERT INTO Images (Image, Type) -- 25
 VALUES (LOAD_FILE('/tmp/g3/Pictures/csdeptpeoplepics/chuggforgame.png'), "mime/png");
 
 -- printer photo
-INSERT INTO Images (Image, type) -- 26
+INSERT INTO Images (Image, Type) -- 26
 VALUES (LOAD_FILE('/tmp/g3/Pictures/g3DBPhotos/printer.PNG'), "mime/png");
 
 -- dialogue
@@ -262,9 +263,10 @@ VALUES ("~`Inv^#alid @>`>^");
 -- Choug (25)
 INSERT INTO DialogueOptions (Phrase)
 VALUES ("What... am I?");
---julians (end at 25)
+
+-- julians (end at 25)
 INSERT INTO DialogueOptions (Phrase)
-VALUES ("I mean I'll take this...Thanks!"); --26
+VALUES ("I mean I'll take this...Thanks!"); -- 26
 
 INSERT INTO DialogueOptions (Phrase)
 VALUES ("Go get some real food...");
@@ -314,7 +316,7 @@ VALUES ("o7");
 INSERT INTO DialogueOptions (Phrase)
 VALUES ("Did Audrey put you up to this?? My plants are still technically alive!");
 
---item inserts
+-- item inserts
 INSERT INTO Items (Name, Weight, ImageID, ItemHintID)
 VALUES ("Doritos", 1, 1, 1);
 
@@ -351,63 +353,63 @@ VALUES ("Watering Can", 1, 11, 11);
 -- printer (just one for now)
 INSERT INTO Printers (Name, ImageID, RoomID) VALUES ("The TIC", 26 ,5);
 
---we inserting npc's (people, professors, students)
+-- we inserting npc's (people, professors, students)
 -- people
 -- shereen
  INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID)
- VALUES (Shereen, Khoja, 13, 7, 1, 18);
+ VALUES ("Shereen", "Khoja", 13, 7, 1, 18);
 
 -- chadd
  INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID)
- VALUES (Chadd, Williams, 12, 5, 1, 12); 
+ VALUES ("Chadd", "Williams", 12, 5, 1, 12); 
 
 -- doug
  INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID)
- VALUES (Doug, Ryan, 14, 10, 1, 16); 
+ VALUES ("Doug", "Ryan", 14, 10, 1, 16); 
 
 -- chris lane
  INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID)
- VALUES (Chris, Lane, 15, 9, 1, 19); 
+ VALUES ("Chris", "Lane", 15, 9, 1, 19); 
 
 -- audrey 
  INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID)
- VALUES (Audrey, Lincoln, 20, 11, 1, 24); 
+ VALUES ("Audrey", "Lincoln", 20, 11, 1, 24); 
 
 -- cooper
  INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID)
- VALUES (Cooper, Delay, 23, 1, 1, 13); 
+ VALUES ("Cooper", "Delay", 23, 1, 1, 13); 
 
---sam
+-- sam
  INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID)
- VALUES (Sam, Sindt, 21, 8, 1, 15); 
+ VALUES ("Sam", "Sindt", 21, 8, 1, 15); 
 
 -- julian
 INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID)
-VALUES (Julian, Bunch, 16, 6, 1, 20);
+VALUES ("Julian", "Bunch", 16, 6, 1, 20);
 
 -- thomas
  INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID) 
- VALUES (Thomas, Robasciotti, 18, 3, 1, 22); 
+ VALUES ("Thomas", "Robasciotti", 18, 3, 1, 22); 
 
 -- mystery student
  INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID) 
- VALUES (Mystery, Student, 24, 4, 1, 21); 
+ VALUES ("Mystery", "Student", 24, 4, 1, 21); 
 
 -- megan
  INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID)
- VALUES (Megan, DeYoung, 17, 4, 1, 17); 
+ VALUES ("Megan", "DeYoung", 17, 4, 1, 17); 
 
 -- chougg
  INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID)
- VALUES (Chugg, Ryams, 25, 1, 1, 25); 
+ VALUES ("Chugg", "Ryams", 25, 1, 1, 25); 
 
 -- larry
  INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID)
- VALUES (Larry, Jensen, 22, 2, 1, 14);
+ VALUES ("Larry", "Jensen", 22, 2, 1, 14);
 
---sarah
+-- sarah
  INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID)
- VALUES (Sarah, Amano, 19, 2, 1, 23);
+ VALUES ("Sarah", "Amano", 19, 2, 1, 23);
 
 -- ranks
 INSERT INTO Ranks (Rank) VALUES ("Freshman");
@@ -416,7 +418,7 @@ INSERT INTO Ranks (Rank) VALUES ("Junior");
 INSERT INTO Ranks (Rank) VALUES ("Senior");
 
 -- Professors
-INSERT INTO Professors (ProfID) VALUES (1); --shereen
+INSERT INTO Professors (ProfID) VALUES (1); -- shereen
 INSERT INTO Professors (ProfID) VALUES (2); -- chadd
 INSERT INTO Professors (ProfID) VALUES (3); -- doug
 INSERT INTO Professors (ProfID) VALUES (4); -- CL
@@ -431,7 +433,7 @@ INSERT INTO Students (StudentID, RankID) VALUES (10, 1);
 INSERT INTO Students (StudentID, RankID) VALUES (11, 3);
 INSERT INTO Students (StudentID, RankID) VALUES (14, 4);
 
---Assignments
+-- Assignments
 INSERT INTO Assignments (AssignmentNumber, Title, DueDate) VALUES (1, "Craps", '2019-11-19');
 INSERT INTO Assignments (AssignmentNumber, Title, DueDate) VALUES (3, "Hash Table", '2019-11-26');
 INSERT INTO Assignments (AssignmentNumber, Title, DueDate) VALUES (5, "Sprint Report", '2019-11-20');
@@ -440,41 +442,38 @@ INSERT INTO Assignments (AssignmentNumber, Title, DueDate) VALUES (2, "ER Diagra
 
 -- Classes
 INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 150: Intro to Computer Science", 12, 4, 1);
-INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 150: Intro to Computer Science", 12, 3, 1);
+INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 150: Intro to Computer Science", 5, 3, 1);
 INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 300: DataStructures", 16, 2, 2);
 INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 493: Capstone", 4, 1, 3);
 INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 315: HCI", 20, 1, 4);
 INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 445: Databases", 6, 2, 5);
 
-INSERT INTO DialogueOptions (Phrase) VALUES ()
-
---Will Take Item
---shereen
+-- Will Take Item
+-- shereen
 INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (1, 5, 28); 
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (1, 9, 17, 26); -- unlocks Scott218 (WICS room)
 
---chadd
-INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (2, 4, 6, 26); --unlocks his office
+-- chadd
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (2, 4, 6, 26); -- unlocks his office
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (2, 9, 12, 26); -- unlocks marsh lab
 INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (2, 11, 42); -- "did audrey put you up to this?" 
---doug
+-- doug
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (3, 1, 15, 27); -- unlocks boxer food share "you need to go get some real food"
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (3, 9, 14, 26); -- unlocks hallick's office
 
---chris lane
+-- chris lane
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (4, 7, 10, 26); -- unlocks the 24 hour room
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (4, 3, 20, 26); -- unlocks the grove
 
---audrey
-INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (5, 9, 17, 26); --unlocks the WICS
+-- audrey
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (5, 9, 17, 26); -- unlocks the WICS
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (5, 10, 11, 29); 
 INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (5, 3, 30); -- "oh I've already stapled and turned in my assignment"
 
 -- cooper
 INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (6, 6, 31);
-INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (6, 6, 9, 26);
 
---sam
+-- sam
 INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (7, 4, 32);
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (7, 2, 2, 33); -- pokeball
 
@@ -504,10 +503,10 @@ INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (11, 5, 38);
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (12, 2, 5, 39);
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (12, 4, 6, 39);
 
---larry
+-- larry
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (13, 11, 1, 40);
 
---sarah
+-- sarah
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (14, 3, 7, 41);
 
 
