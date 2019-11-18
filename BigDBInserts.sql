@@ -160,35 +160,159 @@ INSERT INTO Images (Image, type) -- 26
 VALUES (LOAD_FILE('/tmp/g3/Pictures/g3DBPhotos/printer.PNG'), "mime/png");
 
 -- dialogue
+/********** Items ***********/
+-- Doritos (1)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("I’ve been eating so much broccoli and kale lately. I need some real food.");
+
+-- Pokeball (2)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Every morning I see a bulbasaur outside my window. I wish I had something to catch it with.");
+
+-- Stapler (3)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Dang it! I didn’t think my assignment would take up two pieces of paper. There’s only one line of code on the second sheet.");
+
+-- SSD (4)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("So much data… Lost… All alone… I really should’ve written my name on it.");
+
+-- Lightsaber (5)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Obi Wan is not gonna be happy with me.");
+
+-- Phone Charger (6)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("My phone has been at 1% for 20 minutes now and I still have two more classes right after this.");
+
+-- Whiteboard Marker (7)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Have you seen those drawings in the Scott lab? I wish I could start making drawings like that.");
+
+-- Semicolon Keycap (8)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("My keyboard is missing a key and it’s been really annoying when I have to code.");
+
+-- WICS Tee (9)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("I’m missing my uniform for the coding competition Saturday. The squad is gonna be mad at me if I don’t find it soon.");
+
+-- Ear of Corn (10)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("I can’t believe the farmers market is closed.");
+
+-- Watering Can (11)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("It hasn’t rained in twenty minutes. I’m worried my apple tree is thirsty.");
+
+
+/*********** People ***********/
+-- Chadd (12)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("PHP's not that bad. It's just the worst of all worlds.");
+
+-- Shereen (13)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Gamers are people too.");
+
+-- Doug (14)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("You're toast.");
+
+-- Chris (15)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Such is life.");
+
+-- Julian (16)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Assignment? Really complicated? Due today? Welp...");
+
+-- Megan (17)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Vibe check.");
+
+-- Thomas (18)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("I love beanies!");
+
+-- Sarah (19)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Zzzzz...");
+
+-- Audrey (20)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("I am so excited for class!");
+
+-- Sam (21)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("My brain is fried from all these practice interview problems.");
+
+-- Larry (22)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Uhhhh, ok.");
+
+-- Cooper (23)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Holy cow I made it into the game!");
+
+-- Mystery student (24)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("~`Inv^#alid @>`>^");
+
+-- Choug (25)
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("What... am I?");
 --julians (end at 25)
-INSERT INTO DialogueOptions (Phrase) VALUES ("I mean I'll take this...Thanks!"); --26
-INSERT INTO DialogueOptions (Phrase) VALUES ("Go get some real food...");
-INSERT INTO DialogueOptions (Phrase) VALUES ("If only this was a Harry Potter wand!");
-INSERT INTO DialogueOptions (Phrase) VALUES ("Corn is good, but watermelon is better!");
-INSERT INTO DialogueOptions (Phrase) VALUES ("I've already stapled and turned in my assignment");
-INSERT INTO DialogueOptions (Phrase) VALUES ("I have an Android, sorry.");
-INSERT INTO DialogueOptions (Phrase) VALUES ("I'm not helping you with that corrupt SSD. I'm off the clock!");
-INSERT INTO DialogueOptions (Phrase) VALUES ("Oh! You must have heard about my databases project!");
-INSERT INTO DialogueOptions (Phrase) VALUES ("Nice.. maybe now my code will build.");
-INSERT INTO DialogueOptions (Phrase) VALUES ("That's a little dangerous, isn't it?");
-INSERT INTO DialogueOptions (Phrase) VALUES ("`~~~~<^%%% [REDACTED]``//>,**");
-INSERT INTO DialogueOptions (Phrase) VALUES ("I can't even see this marker's juice...");
-INSERT INTO DialogueOptions (Phrase) VALUES ("I grew up in a Star Trek household...");
-INSERT INTO DialogueOptions (Phrase) VALUES ("hmmmmmmmm");
-INSERT INTO DialogueOptions (Phrase) VALUES ("Can I make tea with this water?");
-INSERT INTO DialogueOptions (Phrase) VALUES ("o7");
-INSERT INTO DialogueOptions (Phrase) VALUES ("Did Audrey put you up to this?? My plants are still technically alive!");
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("I mean I'll take this...Thanks!"); --26
 
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Go get some real food...");
 
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("If only this was a Harry Potter wand!");
 
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Corn is good, but watermelon is better!");
 
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("I've already stapled and turned in my assignment");
 
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("I have an Android, sorry.");
 
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("I'm not helping you with that corrupt SSD. I'm off the clock!");
 
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Oh! You must have heard about my databases project!");
 
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Nice.. maybe now my code will build.");
 
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("That's a little dangerous, isn't it?");
 
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("`~~~~<^%%% [REDACTED]``//>,**");
 
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("I can't even see this marker's juice...");
+
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("I grew up in a Star Trek household...");
+
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("hmmmmmmmm");
+
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Can I make tea with this water?");
+
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("o7");
+
+INSERT INTO DialogueOptions (Phrase)
+VALUES ("Did Audrey put you up to this?? My plants are still technically alive!");
 
 --item inserts
 INSERT INTO Items (Name, Weight, ImageID, ItemHintID)
@@ -259,7 +383,7 @@ INSERT INTO Printers (Name, ImageID, RoomID) VALUES ("The TIC", 26 ,5);
 
 -- julian
 INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID)
-VALUES (Julian, Bunch, 19, 6, 1, 20);
+VALUES (Julian, Bunch, 16, 6, 1, 20);
 
 -- thomas
  INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID) 
@@ -283,7 +407,7 @@ VALUES (Julian, Bunch, 19, 6, 1, 20);
 
 --sarah
  INSERT INTO People (FName, LName, DialogueID, ItemID, PrinterID, PictureID)
- VALUES (Sarah, Amano, 16, 2, 1, 23);
+ VALUES (Sarah, Amano, 19, 2, 1, 23);
 
 -- ranks
 INSERT INTO Ranks (Rank) VALUES ("Freshman");
