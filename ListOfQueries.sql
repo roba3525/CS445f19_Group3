@@ -39,7 +39,7 @@ WHERE PersonID = 1;
 --  get images for all the people you gave an item 
 -- to and the number of friends you made for scoring purposes (for the end screen all your friends)
 
-SELECT Image, COUNT (PersonID)
+SELECT Images.ImageID, Image, COUNT (People.PersonID)
 FROM Gives, People, Images
 WHERE Gives.PersonID=People.PersonID
 AND People.PictureID=Images.ImageID

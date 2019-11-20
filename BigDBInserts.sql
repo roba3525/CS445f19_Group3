@@ -196,7 +196,7 @@ VALUES ("My keyboard is missing a key and it’s been really annoying when I hav
 
 -- WICS Tee (9)
 INSERT INTO DialogueOptions (Phrase)
-VALUES ("I’m missing my uniform for the coding competition Saturday. The squad is gonna be mad at me if I don’t find it soon.");
+VALUES ("They don't call me Coach Lane for nothing!");
 
 -- Ear of Corn (10)
 INSERT INTO DialogueOptions (Phrase)
@@ -451,10 +451,10 @@ INSERT INTO Classes (Name, RoomID, ProfID, AssignmentID) VALUES ("CS 445: Databa
 -- Will Take Item
 -- shereen
 INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (1, 5, 28); 
-INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (1, 9, 17, 26); -- unlocks Scott218 (WICS room)
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (1, 9, 12, 26); -- unlocks marshlab
 
 -- chadd
-INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (2, 4, 6, 26); -- unlocks his office
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (2, 4, 1, 26); -- unlocks cascade
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (2, 9, 12, 26); -- unlocks marsh lab
 INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (2, 11, 42); -- "did audrey put you up to this?" 
 -- doug
@@ -500,14 +500,42 @@ INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (11, 7, 1
 INSERT INTO WillTakeItem (PersonID, ItemID, DialogueID) VALUES (11, 5, 38);
 
 -- chougg
-INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (12, 2, 5, 39);
-INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (12, 4, 6, 39);
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (12, 2, 10, 39);
+INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (12, 4, 9, 39);
 
 -- larry
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (13, 11, 1, 40);
 
 -- sarah
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (14, 3, 7, 41);
+
+-- Room People inserts (professors will be inserted based on user selection of class & professor)
+INSERT INTO RoomPeople (RoomID, PersonID) VALUES (8, 5); -- audrey, math lab
+INSERT INTO RoomPeople (RoomID, PersonID) VALUES (18, 6); -- cooper, the pod
+INSERT INTO RoomPeople (RoomID, PersonID) VALUES (12, 7); -- sam, marshlab
+INSERT INTO RoomPeople (RoomID, PersonID) VALUES (16, 8); -- julian, scott 204
+INSERT INTO RoomPeople (RoomID, PersonID) VALUES (17, 9); -- thomas, scott 218
+INSERT INTO RoomPeople (RoomID, PersonID) VALUES (1, 10); -- mystery student, cascade lobby
+INSERT INTO RoomPeople (RoomID, PersonID) VALUES (12, 11); -- megan, marshlab
+INSERT INTO RoomPeople (RoomID, PersonID) VALUES (9, 12); -- chougg, the front desk
+INSERT INTO RoomPeople (RoomID, PersonID) VALUES (15, 13); -- larry, boxer food share
+INSERT INTO RoomPeople (RoomID, PersonID) VALUES (3, 14); -- sarah, strain 222
+
+-- Rooms Item inserts
+INSERT INTO RoomItems (ItemID, RoomID) VALUES (1, 6); -- doritos, chadd's office
+INSERT INTO RoomItems (ItemID, RoomID) VALUES (2, 19); -- pokeball, the mailroom
+INSERT INTO RoomItems (ItemID, RoomID) VALUES (3, 3); -- stapler, strain 222
+INSERT INTO RoomItems (ItemID, RoomID) VALUES (4, 1); -- SSD, cascade lobby
+INSERT INTO RoomItems (ItemID, RoomID) VALUES (5, 17); -- lightsaber, scott 218
+INSERT INTO RoomItems (ItemID, RoomID) VALUES (6, 8); -- phone charger, math lab
+INSERT INTO RoomItems (ItemID, RoomID) VALUES (7, 14); -- whiteboard marker, hallick's office
+INSERT INTO RoomItems (ItemID, RoomID) VALUES (8, 10); -- semicolon key cap, 24 hour room
+INSERT INTO RoomItems (ItemID, RoomID) VALUES (9, 3); -- WICS tee, strain 222
+INSERT INTO RoomItems (ItemID, RoomID) VALUES (10, 18); -- ear of corn, the pod
+INSERT INTO RoomItems (ItemID, RoomID) VALUES (11, 12); -- watering can, marsh lab
+
+
+
 
 
 

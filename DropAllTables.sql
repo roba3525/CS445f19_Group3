@@ -1,5 +1,6 @@
 -- warning this will clear all tables in the database!! including users 
 
+DROP TABLE IF EXISTS RoomPeople;
 DROP TABLE IF EXISTS Classes;
 DROP TABLE IF EXISTS Assignments;
 DROP TABLE IF EXISTS Professors;
