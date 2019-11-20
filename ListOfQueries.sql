@@ -77,7 +77,31 @@ FROM Buildings INNER JOIN AdjacentBuildings ON Buildings.BuildingID=
 WHERE AdjBuildings.BuildingID = AdjacentBuildings.BuildingID
 AND BuildingID = 1; -- oof yikes
 
+INSERT INTO Users(Username, Password, Salt, CreatedOn)
+VALUES (:user,:pass,:salt,:created);
 
+-- Generate a list of all classnames for dropdown menu
+SELECT DISTINCT Name 
+FROM Classes;
 
+-- Select all professors id, fname, and lname
+SELECT Professors.ProfID, FName, LName 
+FROM Professors, People 
+WHERE Professors.ProfID = People.PersonID;
 
+-- Get the users ID for faster lookup
+SELECT UserID 
+FROM Users 
+WHERE
+Username = :user;
 
+-- What professors teach this class?
+SELECT ProfID, Name 
+FROM Classes 
+WHERE ProfID = :profID 
+AND Classes.Name = :className;
+
+-- Login query
+SELECT * 
+FROM Users 
+WHERE Username = :user and Password = :pass;
