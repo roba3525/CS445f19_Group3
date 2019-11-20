@@ -13,6 +13,7 @@
 	if( !isset($_SESSION['VALID']) ||
 		 $_SESSION['VALID'] != 1 )
 	{
-		header('Location: Login.html');
+    var_dump($_SESSION['VALID']);
+		//header('Location: Login.html');
 	}
 ?>

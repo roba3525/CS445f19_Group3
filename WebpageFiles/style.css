@@ -51,6 +51,23 @@ top:38px;
 width:400px;
 }
 
+#top_right
+{
+position:absolute;
+text-align:right;
+color:#EAEAEA;
+left:490px;
+top:38px;
+width:400px;
+}
+
+.logoutPos
+{
+position: fixed;
+right:650px;
+top:28px;
+}         
+
 #mainpic
 {
 background-image:url(images/main.jpg);
@@ -59,7 +76,14 @@ width:900px;
 height:354px;	
 }
 
-
+.inline_options
+{
+display:block;
+float:left;
+clear:both;
+width:960px;
+height:54px;
+}
 
 .off
 {
@@ -72,7 +96,7 @@ color:#000000;
 display:block;
 float:left;
 clear:both;
-width:960px;
+width:654px;
 height:54px;
 float:left;
 clear:both;
@@ -209,6 +233,11 @@ text-decoration:none;
 color:#FFF;
 }
 
+.action_bar
+{
+width:inherit;
+border-top:double;
+}
 
 #menu ul {
 	list-style: none;
@@ -254,3 +283,49 @@ html, body {
 text-align: center;
 }
 p {text-align: left;}
+
+
+#content_main textarea
+{
+resize:none;
+border:solid 1px black;
+margin-bottom:10px;
+padding-left:2px;
+}  
+
+.btn-group button {
+  border: 1px solid black;
+  border-radius:8px;
+  margin-right:10px;
+  margin-bottom:5px;
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.btn-group select {
+  border: 1px solid black;
+  border-radius:8px;
+  margin-right:10px;
+  margin-bottom:5px;
+	color: #061C37;
+  padding: 10px 14px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #b5b0b0;
+}
+
+.btn-group select:hover {
+  background-color: #b5b0b0;
+}

@@ -22,17 +22,16 @@ if(  ( 	isset($_POST['txtUser']) &&
  
 	$result = queryValidateUser($dbh, $userID, $passwd);
 
-
 	if( TRUE == $result )
 	{
 		$_SESSION['VALID'] = 1;
+    $_SESSION['USERNAME'] = $userID; 
 		
 		header('Location: playerOptions.php');
 	}
 	else
 	{
 		header('Location: Login.html');
-		
 	}
 }
 ?>
