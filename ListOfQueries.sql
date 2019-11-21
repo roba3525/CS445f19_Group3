@@ -105,3 +105,12 @@ AND Classes.Name = :className;
 SELECT * 
 FROM Users 
 WHERE Username = :user and Password = :pass;
+
+-- Which rooms can you get to from a given room (rooms that are in same building and unlocked)
+SELECT DISTINCT WillTakeItem.RoomID
+FROM Rooms, Buildings, WillTakeItem, Items, People, Players, Gives
+WHERE WillTakeItem.PersonID = Gives.PersonID
+AND WillTakeItem.ItemID = Gives.ItemID
+AND Rooms.BuildingID = :BuildingID
+AND Gives.PlayerID = :PlayerID;
+
