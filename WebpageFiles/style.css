@@ -253,6 +253,20 @@ border-top:double;
 	
 }
 
+.menu_label {
+  float: left;
+	height: 36px;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: bold;
+	padding-top: 18px;
+	font-size: 15px;
+	padding-left:13px;
+	padding-right:13px;
+}
+
 #menu a {
 	float: left;
 	height: 36px;

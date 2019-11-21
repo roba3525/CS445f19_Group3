@@ -6,13 +6,58 @@
   // Project: 		Group DB Assignment
   // Description: The main gameplay screen
   
+  session_start();
+  
  	require_once('basicErrorHandling.php');
 	require_once ('connDB.php');
   require_once('queryGetAllClasses.php');
   require_once('queryGetAllProfs.php');
-  //require_once('authHelper.php');
+  require_once('addUserPlayer.php');
+  require_once('queryGetAssignmentByClassName.php');
+  require_once('queryGetBuildingID.php');
+  require_once('queryGetRoomsByBuildingID.php');
+  require_once('queryGetAllBuildings.php');
+  require_once('queryGetRoomID.php');
+  require_once('queryGetBuildingName.php');
+  require_once('queryGetRoomName.php');
+
+  if( !isset($_SESSION['VALID']) ||
+	 $_SESSION['VALID'] != 1 )
+	{
+   var_dump($_SESSION['VALID']);
+	 header('Location: Login.html');
+  }
 
 	 $dbh = db_connect();
+	if((isset($_SESSION['USERID'])) &&
+    (isset($_POST['txtCharacter'])) &&
+    (isset($_POST['ClassName'])) &&
+    (isset($_POST['ProfID']))) 
+    {
+      $userID = $_SESSION['USERID'];
+      $characterName = $_POST['txtCharacter'];
+      $className = $_POST['ClassName'];
+      $profID = $_POST['ProfID'];
+      
+      if('' === $characterName){
+        print "Please enter a character name!";
+        header('Location: playerOptions.php');
+      }
+      else if('-1' === $profID) {
+        print "Please select a professor!";
+        header('Location: playerOptions.php');
+      }
+      else {
+        addUserPlayer($dbh, $userID, $characterName); 
+      }
+      
+      $assignmentName = queryGetAssignmentByClassName($dbh, $className);
+      $buildingID = queryGetBuildingID($dbh, 'Strain');
+      $roomID = queryGetRoomID($dbh, 'Strain 222');
+    } else {
+      print "Something went wrong! Please try again.";
+      header('Location: playerOptions.php');
+    }
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -45,33 +90,50 @@
       </div>
     </div>   
     <div id="menu">
-      &nbsp;
+      <label class='menu_label' id='lblCharName'>Name: <?php print $characterName; ?></label>
+      <label class='menu_label' id='lblAssignment'>Assignment: <?php print $assignmentName; ?></label>
+      <label class='menu_label' id='lblCurrBldg'>Current Building: <?php print queryGetBuildingName($dbh, $buildingID)?></label>
+      <label class='menu_label' id='lblCurrRoom'>Current Room: <?php print queryGetRoomName($dbh, $roomID)?></label>
     </div>
     <div id="content">
       <div id="content_top"></div>
       <div id="content_main">
          <textarea readonly='readonly' id='taMain' name='gameInfo' rows='20' cols='91'>
-          test
+          You are in 
          </textarea>
          <div class="btn-group">
            <button>Look</button>
            <select>
-             <option value='0'>Give</option>
-             <option value='1'>&nbsp;</option>
+             <option value='-1'>Give</option>
            </select>
            <select>
-             <option value='1'>Leave Bldg...</option>
+             <option value='-1'>Go To Bldg...</option>
+             <?php 
+                $rows = queryGetAllBuildings($dbh);
+                foreach($rows as $data) {
+                  print '<option disabled="disabled" VALUE=' . $data['BuildingID'] . '>';
+                  print $data['Name'] . '</option>';
+                }
+              ?>
            </select>
          </div>
          <div class="btn-group">
            <button>Take Items</button>
-           <button>Next Room</button>
+           <select>
+             <option value='-1'>Go To Room...</option>
+             <?php 
+                $rows = queryGetRoomsByBuildingID($dbh, $buildingID);
+                foreach($rows as $data) {
+                  print '<option VALUE=' . $data['RoomID'] . '>';
+                  print $data['Name'] . '</option>';
+                }
+              ?>
+           </select>
          </div>
          <div class="btn-group">
            <select>
-             <option value='0'>Talk...</option>
+             <option value='-1'>Talk...</option>
            </select>
-           <button>Prev Room</button>
          </div>
       </div>
       <div id="content_bottom"></div>

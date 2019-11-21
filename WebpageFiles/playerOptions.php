@@ -6,25 +6,27 @@
   // Project: 		Group DB Assignment
   // Description: Sets player options after signing in
   
+  session_start();
+    
  	require_once('basicErrorHandling.php');
 	require_once ('connDB.php');
   require_once('queryGetAllClasses.php');
   require_once('queryGetAllProfs.php');
   require_once('queryGetUserID.php');
-    
-  session_start();
- 
-	if( !isset($_SESSION['VALID']) ||
-		 $_SESSION['VALID'] != 1 )
+  
+  // authentication
+  if( !isset($_SESSION['VALID']) ||
+	 $_SESSION['VALID'] != 1 )
 	{
-    header('Location: Login.html');
-	}
-   
-	 $dbh = db_connect();
-   
-   $userID = queryGetUserID($dbh, $_SESSION['USERNAME']);
-   
-   $_SESSION['USERID'] = $userID;
+	 header('Location: Login.html');
+  }
+  
+  // db connection
+  $dbh = db_connect();
+  //get ID of active user
+  $userID = queryGetUserID($dbh, $_SESSION['USERNAME']);
+  //set it as a session variable
+  $_SESSION['USERID'] = $userID;
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -35,18 +37,26 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.min.js"></script>
 <script type="text/javascript" src="file.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() {    
+  // jQuery calls
+  $(document).ready(function() {  
+    // listen for changes in class selection
     $('#selClasses').change(function(){
       var className = $('#selClasses option:selected').text();
+      // Reset professor selections
+      $('#selProfs option:selected').removeAttr('selected');
+      $("#selProfs").val($("#selProfs option:first").val());
+      // disable invalid professor names
       $('#selProfs > option').each(function() {
         var option = $(this);
         var profID = $(this).val();
+        // ajax call to update select list options
         $.ajax({
             url: 'queryIsValidProf.php',
             type: 'POST',
             data: {ClassName: className, ProfID : profID},
             dataType: 'json',
             success: function(result){
+                // if prof name is valid for class selection, enable. else, disable.
                 if(result.match == '1') {
                   option.prop('disabled', false);
                 }
@@ -87,7 +97,7 @@
          <br>
          </p>
          <br>
-         <form method="post" name="frmOptions" action=addUserPlayer.php>
+         <form method="post" name="frmOptions" action=mainGamePage.php>
           <span style="display: block;">
             Character Name: 
             <input name="txtCharacter" type="text" >
@@ -95,7 +105,7 @@
           <br>
           <span style="display:block;">
             What class are you taking?:
-            <select NAME="ClassID" id="selClasses">
+            <select NAME="ClassName" id="selClasses">
               <?php 
                 $rows = queryGetAllClasses($dbh);
                 foreach($rows as $data) {
@@ -109,7 +119,7 @@
           <span style="display:block;">
             Who is your professor?:
             <select NAME="ProfID" id="selProfs">
-              <option>Select one...</option>
+              <option value='-1'>Select one...</option>
               <?php 
                 $rows = queryGetAllProfs($dbh);
                 foreach($rows as $data) {
@@ -120,8 +130,9 @@
             </select>
           </span>
           <br>
+          <input type='hidden' name='hdnUserID' value="<?php $userID ?>">
           <span style="display: inline;">
-            <input type="submit" name="btnLogin" value="Login"> 
+            <input type="submit" name="btnSubmit" value="Submit"> 
             &nbsp;
             <button id="Cancel" onclick="window.location.href='playerOptions.php';return false;">Clear</button>
           </span>
