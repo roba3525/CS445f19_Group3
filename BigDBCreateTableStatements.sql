@@ -188,12 +188,3 @@ CREATE TABLE Classes(
   CONSTRAINT FK_Classes_RoomID FOREIGN KEY(RoomID) REFERENCES Rooms(RoomID),
   CONSTRAINT U_RoomID UNIQUE(RoomID)
 ) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
-
-CREATE TABLE UserCharacters(
-  UserID INT NOT NULL,
-  PlayerID INT NOT NULL,
-  CONSTRAINT PK_UserCharacters PRIMARY KEY(UserID, PlayerID),
-  CONSTRAINT FK_UserCharacters_UserID FOREIGN KEY(UserID) REFERENCES Users(UserID),
-  CONSTRAINT FK_UserCharacters_PlayerID FOREIGN KEY(PlayerID) REFERENCES Players(PlayerID),
-  CONSTRAINT U_PlayerID UNIQUE(PlayerID)
-) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
