@@ -54,6 +54,7 @@
       $assignmentName = queryGetAssignmentByClassName($dbh, $className);
       $buildingID = queryGetBuildingID($dbh, 'Strain');
       $roomID = queryGetRoomID($dbh, 'Strain 222');
+      
     } else {
       print "Something went wrong! Please try again.";
       header('Location: playerOptions.php');
@@ -92,8 +93,8 @@
     <div id="menu">
       <label class='menu_label' id='lblCharName'>Name: <?php print $characterName; ?></label>
       <label class='menu_label' id='lblAssignment'>Assignment: <?php print $assignmentName; ?></label>
-      <label class='menu_label' id='lblCurrBldg'>Current Building: <?php print queryGetBuildingName($dbh, $buildingID)?></label>
-      <label class='menu_label' id='lblCurrRoom'>Current Room: <?php print queryGetRoomName($dbh, $roomID)?></label>
+      <label class='menu_label' id='lblCurrBldg'>Current Building: <?php print queryGetBuildingName($dbh, $buildingID);?></label>
+      <label class='menu_label' id='lblCurrRoom'>Current Room: <?php print queryGetRoomName($dbh, $roomID);?></label>
     </div>
     <div id="content">
       <div id="content_top"></div>
