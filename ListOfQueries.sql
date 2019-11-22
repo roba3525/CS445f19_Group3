@@ -53,13 +53,18 @@ WHERE PlayerItems.ItemID=Items.ItemID
 AND Items.ImageID=Images.ImageID
 AND PlayerID=1;
 
-
+-- get all the pictures for the people in a given room
+SELECT Image, RoomPeople.PersonID
+FROM RoomPeople, People, Images
+WHERE RoomPeople.PersonID=People.PersonID
+AND People.PictureID=Images.ImageID
+AND RoomID = 12;
 -- get all the pictures for items in a given room
-SELECT Image 
+SELECT Image, Items.ItemID
 FROM RoomItems, Items, Images
 WHERE RoomItems.ItemID=Items.ItemID
 AND Items.ImageID=Images.ImageID
-AND RoomID = 1; -- subquery? (and is not in Gives with player ID whatever the player’s ID is, affected by take all?)
+AND RoomID = 3; -- subquery? (and is not in Gives with player ID whatever the player’s ID is, affected by take all?)
 
 -- get the images for a specific printer
 
@@ -105,3 +110,6 @@ AND Classes.Name = :className;
 SELECT * 
 FROM Users 
 WHERE Username = :user and Password = :pass;
+
+SELECT FName, LName FROM People, RoomPeople WHERE
+People.PersonID=RoomPeople.PersonID AND RoomPeople.RoomID=12;

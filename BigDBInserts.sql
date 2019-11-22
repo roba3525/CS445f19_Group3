@@ -510,6 +510,11 @@ INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (13, 11, 
 INSERT INTO WillTakeItem (PersonID, ItemID, RoomID, DialogueID) VALUES (14, 3, 7, 41);
 
 -- Room People inserts (professors will be inserted based on user selection of class & professor)
+INSERT INTO RoomPeople (RoomID, PersonID) VALUES (4, 1);
+INSERT INTO RoomPeople (RoomID, PersonID) VALUES (6, 2);
+INSERT INTO RoomPeople (RoomID, PersonID) VALUES (5, 3);
+INSERT INTO RoomPeople (RoomID, PersonID) VALUES (7, 4);
+
 INSERT INTO RoomPeople (RoomID, PersonID) VALUES (8, 5); -- audrey, math lab
 INSERT INTO RoomPeople (RoomID, PersonID) VALUES (18, 6); -- cooper, the pod
 INSERT INTO RoomPeople (RoomID, PersonID) VALUES (12, 7); -- sam, marshlab

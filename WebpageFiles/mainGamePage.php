@@ -20,6 +20,8 @@
   require_once('queryGetRoomID.php');
   require_once('queryGetBuildingName.php');
   require_once('queryGetRoomName.php');
+	require_once ('queriesGetRoomInfo.php');
+	require_once ('look.php');
 
   if( !isset($_SESSION['VALID']) ||
 	 $_SESSION['VALID'] != 1 )
@@ -69,7 +71,17 @@
 <script type="text/javascript" src="file.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {    
-    
+    //look for a click of the Look button
+		$('#clickLook').click(function() {
+				$.ajax({
+						type: "POST",
+						url: "look.php",
+						data: { RoomID: roomID }
+				})
+  });
+});
+                
+		}
   });
 </script>
 
@@ -101,8 +113,10 @@
          <textarea readonly='readonly' id='taMain' name='gameInfo' rows='20' cols='91'>
           You are in 
          </textarea>
+				 <div id="roomthings">
+						<button id="clickLook">Look</button>
+				 </div>
          <div class="btn-group">
-           <button>Look</button>
            <select>
              <option value='-1'>Give</option>
            </select>
@@ -133,6 +147,13 @@
          <div class="btn-group">
            <select>
              <option value='-1'>Talk...</option>
+						 <?php
+						 $rows = getRoomPeople($dbh, $roomID);
+						  foreach ($rows as $data){
+						    print '<option VALUE=' . $data['PersonID'] . '>'
+							  print $data['FName'] . " " . $data['LName'] . '</option>'
+						 }
+						 ?>
            </select>
          </div>
       </div>
