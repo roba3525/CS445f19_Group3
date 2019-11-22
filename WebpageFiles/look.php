@@ -13,13 +13,10 @@
   $dbh=db_connect();
   
 	if isset($if(isset($_POST['RoomID'])){
-		$room = $_POST['RoomID'])){
+		$room = $_POST['RoomID'])
 			
 			$peopleImages = getRoomPeopleImages ($dbh, $room);
 			$itemImages = getRoomItemImages ($dbh, $room);
-			
-			$peopleCount = count($peopleImages);
-			$itemCount = count($itemImages);
 
 			echo '<table border=1 cellpadding=4>';
 								echo '<tr>';
@@ -28,13 +25,21 @@
 									echo '<img src="data:image/jpeg;base64,'.base64_encode($data->load()) .'" />';
 									echo '</td>';
 								}
-							}
 						echo '</tr>';
-						}
+					
 		echo '</table>';
-		}
-	}
+		
+	echo '<br>';
 
+			echo '<table border=1 cellpadding=4>';
+								echo '<tr>';
+								foreach ($itemImages as $data){
+									echo '<td>';
+									echo '<img src="data:image/jpeg;base64,'.base64_encode($data->load()) .'" />';
+									echo '</td>';
+								}
+							echo '</tr>';
+						
+		echo '</table>';
 }
-
 ?>
