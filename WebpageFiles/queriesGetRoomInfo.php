@@ -22,7 +22,6 @@ function getRoomPeople($dbh, $roomID){
 		return $rows;
 		
 	}
-}
 
 
 function getRoomItems ($dbh, $roomID){
@@ -39,5 +38,5 @@ function getRoomItems ($dbh, $roomID){
 		return $rows;
 		
 	}
-}
+
 ?>

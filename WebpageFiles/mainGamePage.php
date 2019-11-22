@@ -81,9 +81,7 @@
 				})
   });
 });
-                
-		}
-  });
+
 </script>
 
 <title>CS Dept | The Game</title>
@@ -151,8 +149,8 @@
 						 <?php
 						 $rows = getRoomPeople($dbh, $roomID);
 						  foreach ($rows as $data){
-						    print '<option VALUE=' . $data['PersonID'] . '>'
-							  print $data['FName'] . " " . $data['LName'] . '</option>'
+						    print '<option VALUE=' . $data['PersonID'] . '>';
+							  print $data['FName'] . " " . $data['LName'] . '</option>';
 						 }
 						 ?>
            </select>
