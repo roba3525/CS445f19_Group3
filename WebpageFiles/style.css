@@ -106,7 +106,7 @@ clear:both;
 {
 margin-top:15px;
 width:204px;
-float:bottom;
+float:left;
 }
 
 #leftmenu_top
@@ -176,8 +176,6 @@ font-weight:bold;
 #leftmenu_main ul li a:hover
 {
 color:#000000;
-	
-	
 }
 
 #content

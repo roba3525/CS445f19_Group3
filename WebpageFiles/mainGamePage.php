@@ -115,6 +115,21 @@ $(document).ready(function (){
       }
     });
   });
+  
+  $('#btnTakeItems').click(function() {
+    var roomID = <?php echo $roomID; ?>;
+    $.ajax({
+      url: 'queryGetRoomItemsAjax.php',
+      type: 'POST',
+      data: {RoomID: roomID},
+      success: function(result) {
+        alert(result);
+      }
+    });
+    //$('.playerInv li').each(function() {
+      //alert($(this).text());
+    //});
+  });
 });
 
 </script>
@@ -141,6 +156,16 @@ $(document).ready(function (){
       <label class='menu_label' id='lblCurrBldg'>Current Building: <?php print queryGetBuildingName($dbh, $buildingID);?></label>
       <label class='menu_label' id='lblCurrRoom'>Current Room: <?php print queryGetRoomName($dbh, $roomID);?></label>
     </div>
+    <div id='leftmenu'>
+      <div id='leftmenu_top'></div>
+      <div id='leftmenu_main'>
+        <h3>Player Inventory</h3>
+          <ul class='playerInv'>
+            <li>test</li>
+          </ul>
+      </div>
+      <div id='leftmenu_bottom'></div>
+    </div>
     <div id="content">
       <div id="content_top"></div>
       <div id="content_main">
@@ -148,10 +173,8 @@ $(document).ready(function (){
 This is a test
          </textarea>
          <div id="peopleImgWrapper"></div>
-				 <div id="roomthings">
-						<button id="clickLook">Look</button>
-				 </div>
          <div class="btn-group">
+         <button id="clickLook">Look</button>
            <select id='selGive'>
              <option value='-1'>Give...</option>
              <?php 
@@ -174,7 +197,7 @@ This is a test
            </select>
          </div>
          <div class="btn-group">
-           <button>Take Items</button>
+           <button id=btnTakeItems>Take Items</button>
            <select id='selRooms'>
              <option value='-1'>Go To Room...</option>
              <?php 
