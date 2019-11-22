@@ -56,7 +56,6 @@
       $assignmentName = queryGetAssignmentByClassName($dbh, $className);
       $buildingID = queryGetBuildingID($dbh, 'Strain');
       $roomID = queryGetRoomID($dbh, 'Strain 222');
-      
     } else {
       print "Something went wrong! Please try again.";
       header('Location: playerOptions.php');
@@ -71,14 +70,50 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.min.js"></script>
 <script type="text/javascript" src="file.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() {    
-    //look for a click of the Look button
-		$('#clickLook').click(function() {
-				$.ajax({
-						type: "POST",
-						url: "look.php",
-						data: { RoomID: roomID }
-				})
+$(document).ready(function (){
+  $('#clickLook').click(function() {
+    $('#peopleImgWrapper').empty();
+    $('#itemImgWrapper').empty();
+    
+    $('#selRoomPeople > option').each(function() {
+      var personID = $(this).val();
+      if(personID > 0) {
+        $.ajax({
+        url: 'queryGetPersonImage.php',
+        type: 'POST',
+        data: {PersonID: personID},
+        success: function(result) {
+          if(result !== 'undefined') {
+            var htmlUpdate = '<img src="getData.php?id=' +result+ '">';
+            $('#peopleImgWrapper').append(htmlUpdate);
+          }
+          else {
+            alert('failed to set people images!');
+          }
+        }
+      });
+      }
+    });
+    
+    $('#selGive > option').each(function() {
+      var itemID = $(this).val();
+      if(itemID > 0) {
+        $.ajax({
+          url: 'queryGetItemImage.php',
+          type: 'POST',
+          data: {ItemID: itemID},
+          success: function(result) {
+            if(result !== 'undefined') {
+              var htmlUpdate = '<img src="getData.php?id=' +result+ '">';
+              $('#itemImgWrapper').append(htmlUpdate);
+            }
+            else {
+              alert('failed to set item images!');
+            }
+          }
+        });
+      }
+    });
   });
 });
 
@@ -110,16 +145,24 @@
       <div id="content_top"></div>
       <div id="content_main">
          <textarea readonly='readonly' id='taMain' name='gameInfo' rows='20' cols='91'>
-          You are in 
+This is a test
          </textarea>
+         <div id="peopleImgWrapper"></div>
 				 <div id="roomthings">
 						<button id="clickLook">Look</button>
 				 </div>
          <div class="btn-group">
-           <select>
-             <option value='-1'>Give</option>
+           <select id='selGive'>
+             <option value='-1'>Give...</option>
+             <?php 
+                $rows = getRoomItems($dbh, $roomID);
+                foreach($rows as $data) {
+                  print '<option disabled="disabled" VALUE=' . $data['ItemID'] . '>';
+                  print $data['Name'] . '</option>';
+                }
+              ?>
            </select>
-           <select>
+           <select id='selBuilding'>
              <option value='-1'>Go To Bldg...</option>
              <?php 
                 $rows = queryGetAllBuildings($dbh);
@@ -132,7 +175,7 @@
          </div>
          <div class="btn-group">
            <button>Take Items</button>
-           <select>
+           <select id='selRooms'>
              <option value='-1'>Go To Room...</option>
              <?php 
                 $rows = queryGetRoomsByBuildingID($dbh, $buildingID);
@@ -144,7 +187,7 @@
            </select>
          </div>
          <div class="btn-group">
-           <select>
+           <select id='selRoomPeople'>
              <option value='-1'>Talk...</option>
 						 <?php
 						 $rows = getRoomPeople($dbh, $roomID);
@@ -155,6 +198,7 @@
 						 ?>
            </select>
          </div>
+         <div id="itemImgWrapper"></div>
       </div>
       <div id="content_bottom"></div>
       <div id="footer"><h3><a href="http://www.bryantsmith.com">florida web design</a></h3></div>

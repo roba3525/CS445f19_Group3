@@ -14,9 +14,7 @@
 function getRoomPeopleImages($dbh, $roomID){
 		$rows = Array();
 		
-		$sth = $dbh -> prepare("SELECT Image, RoomPeople.PersonID FROM RoomPeople, People, Images
-													WHERE RoomPeople.PersonID=People.PersonID AND People.PictureID=Images.ImageID
-													AND RoomID= :roomID;");
+		$sth = $dbh -> prepare("SELECT Image, Type, RoomPeople.PersonID FROM RoomPeople, People, Images WHERE RoomPeople.PersonID=People.PersonID AND People.PictureID=Images.ImageID AND RoomID= :roomID;");
 		$sth -> bindValue(":roomID", $roomID);
 		$sth -> execute();
 			while ($row = $sth -> fetch())
@@ -26,15 +24,13 @@ function getRoomPeopleImages($dbh, $roomID){
 		return $rows;
 		
 	}
-}
+
 //get all the pictures for items in a given room
 
 function getRoomItemImages($dbh, $roomID){
 		$rows = Array();
 		
-		$sth = $dbh -> prepare("SELECT Image, Items.ItemID FROM RoomItems, Items, Images
-												WHERE RoomItems.ItemID=Items.ItemID AND Items.ImageID=Images.ImageID
-												AND RoomID = :roomID;");
+		$sth = $dbh -> prepare("SELECT Image, Type, Items.ItemID FROM RoomItems, Items, Images WHERE RoomItems.ItemID=Items.ItemID AND Items.ImageID=Images.ImageID AND RoomID = :roomID;");
 		$sth -> bindValue(":roomID", $roomID);
 		$sth -> execute();
 			while ($row = $sth -> fetch())
@@ -44,6 +40,6 @@ function getRoomItemImages($dbh, $roomID){
 		return $rows;
 		
 	}
-}
+
 
 ?>

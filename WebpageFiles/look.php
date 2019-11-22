@@ -12,13 +12,32 @@
   
   $dbh=db_connect();
   
-	if isset($if(isset($_POST['RoomID'])){
-		$room = $_POST['RoomID'])
+	if(isset($_POST['RoomID'])){
+    
+    $encPeopleImages = array();
+    $encItemImages = array();
+    
+		$room = $_POST['RoomID'];
 			
-			$peopleImages = getRoomPeopleImages ($dbh, $room);
-			$itemImages = getRoomItemImages ($dbh, $room);
-
-			echo '<table border=1 cellpadding=4>';
+    $peopleImages = getRoomPeopleImages($dbh, $room);
+		$itemImages = getRoomItemImages($dbh, $room);
+    
+    foreach($peopleImages as $pImage) {
+      $encPeopleImages[] = base64_encode($pImage['Image']);
+    }
+    
+    foreach($itemImages as $iImage) {
+      $encItemImages[] = base64_encode($iImage['Image']);
+    }
+    
+    $plpImageArray = json_encode(array($encPeopleImages));
+    
+    echo json_encode($encPeopleImages);
+    
+    //echo json_encode(array('peopleImages' => $peopleImages, 'itemImages' => $itemImages)); 
+  }
+  
+  /*echo '<table border=1 cellpadding=4>';
 								echo '<tr>';
 								foreach ($peopleImages as $data){
 									echo '<td>';
@@ -40,6 +59,6 @@
 								}
 							echo '</tr>';
 						
-		echo '</table>';
-}
+		echo '</table>';*/
+
 ?>
