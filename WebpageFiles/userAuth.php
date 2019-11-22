@@ -9,6 +9,7 @@
  require_once 'basicErrorHandling.php';
  require_once 'connDB.php';
  require_once 'queryValidateUser.php';
+ require_once 'queryIsAdmin.php';
  
 session_start();
 $_SESSION['VALID'] = 0;
@@ -26,6 +27,11 @@ if(  ( 	isset($_POST['txtUser']) &&
 	{
 		$_SESSION['VALID'] = 1;
     $_SESSION['USERNAME'] = $userID; 
+    
+    if(queryIsAdmin($dbh, $userID)) {
+      $_SESSION['ADMIN'] = 1;
+      header('Location: admin.php');
+    }
 		
 		header('Location: playerOptions.php');
 	}
