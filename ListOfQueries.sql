@@ -123,4 +123,9 @@ AND WillTakeItem.ItemID = Gives.ItemID
 AND Rooms.BuildingID = :BuildingID
 AND Gives.PlayerID = :PlayerID;
 
+-- Get score
+SELECT Score
+FROM Players
+WHERE Players.UserID = :UserID;
+
 >>>>>>> b430ff1d5627efacab9c52cdc3736a58dca9ac33
