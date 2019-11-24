@@ -22,13 +22,14 @@ if(  ( 	isset($_POST['txtUser']) &&
  	$dbh=db_connect();
  
 	$result = queryValidateUser($dbh, $userID, $passwd);
+  $isAdmin = queryIsAdmin($dbh, $userID);
 
 	if( TRUE == $result )
 	{
 		$_SESSION['VALID'] = 1;
     $_SESSION['USERNAME'] = $userID; 
     
-    if(queryIsAdmin($dbh, $userID)) {
+    if(TRUE == $isAdmin) {
       $_SESSION['ADMIN'] = 1;
       header('Location: admin.php');
     }
