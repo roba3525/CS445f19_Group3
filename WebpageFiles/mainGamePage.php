@@ -50,7 +50,7 @@
         header('Location: playerOptions.php');
       }
       else {
-        addUserPlayer($dbh, $userID, $characterName); 
+        $playerID = addUserPlayer($dbh, $userID, $characterName); 
       }
       
       $assignmentName = queryGetAssignmentByClassName($dbh, $className);
@@ -74,6 +74,7 @@ $(document).ready(function (){
   $('#clickLook').click(function() {
     $('#peopleImgWrapper').empty();
     $('#itemImgWrapper').empty();
+		$('#taMain').empty();
     
     $('#selRoomPeople > option').each(function() {
       var personID = $(this).val();
@@ -92,6 +93,20 @@ $(document).ready(function (){
           }
         }
       });
+			$.ajax({
+					url: 'getDialogue.php',
+					type: 'POST',
+					data: {PersonID: personID, PlayerID: playerID},
+					success: function (result2) {
+						if (result2 !== 'undefined'){
+							var dialogue = result;
+							$('#taMain').append(dialogue);
+						}
+						else
+							alert ('failed to get dialogue!');
+					}
+				
+				})
       }
     });
     

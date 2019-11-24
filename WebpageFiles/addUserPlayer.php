@@ -10,6 +10,9 @@
 			$sth->bindValue(":user",$userID);
 		
 			$sth->execute();
+			$sth = $dbh->prepare("SELECT LAST_INSERT_ID();");
+			$retVal = $sth->fetch()["LAST_INSERT_ID()"];
+			return $retVal;
 		}
 		catch (PDOException $e)
     {

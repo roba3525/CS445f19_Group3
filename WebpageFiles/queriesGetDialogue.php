@@ -5,11 +5,31 @@
   // Date:				November 19 2019
   // Class:				CS 445
   // Project: 		Group DB Assignment
-  // Description: Gets the dialogue option for a selected 
+  // Description: queries for the dialogue option for a selected 
 	//              person based on what item they want
 
 
-// get a character's default dialogue -- under talk if you haven't given them the item they want
+// get a character's default dialogue -- under talk if you have given them the item they want
+function checkIfGivenWant ($dbh, $PersonID, $PlayerID){
+		$retVal = false;
+		
+		$sth = $dbh -> prepare("SELECT People.ItemID FROM People,
+										Gives WHERE People.PersonID = Gives.PersonID 
+										AND People.ItemID = Gives.ItemID AND 
+										Gives.PersonID=:PersonID AND Gives.PlayerID=:PlayerID;");
+		$sth -> bindValue(":PersonID", $PersonID);
+		$sth -> bindValue(":PlayerID", $PlayerID);
+		$sth -> execute();
+		if (1 == $sth -> rowCount())
+		{
+			$retVal = true;
+		}
+		return $retVal;
+		
+	}
+	
+}
+
 function getDefaultDialogue($dbh, $PersonID){
 		$retVal = "NONE";
 		
@@ -27,7 +47,7 @@ function getDefaultDialogue($dbh, $PersonID){
 	}
 }
 
-// get a character's item hint -- under the talk selection
+// get a character's item hint if you haven't given them what they want-- under the talk selection
 function getItemHint($dbh, $PersonID){
 		$retVal = "NONE";
 		
