@@ -13,6 +13,7 @@
  
 session_start();
 $_SESSION['VALID'] = 0;
+$_SESSION['ADMIN'] = 0;
 
 if(  ( 	isset($_POST['txtUser']) &&
 		isset($_POST['txtPassword'])))
@@ -26,9 +27,9 @@ if(  ( 	isset($_POST['txtUser']) &&
 
 	if( TRUE == $result )
 	{
+    header('Location: admin.php');
 		$_SESSION['VALID'] = 1;
     $_SESSION['USERNAME'] = $userID; 
-    
     if(TRUE == $isAdmin) {
       $_SESSION['ADMIN'] = 1;
       header('Location: admin.php');
