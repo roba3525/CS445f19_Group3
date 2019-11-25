@@ -96,22 +96,6 @@ $(document).ready(function (){
           }
         }
       });
-			$.ajax({
-					url: 'getDialogue.php',
-					type: 'POST',
-					data: {PersonID: personID, PlayerID: playerID},
-					success: function (result2) {
-						if (result2 !== 'undefined'){
-							var dialogue = result;
-							$('#taMain').append(dialogue);
-						}
-						else
-							alert ('failed to get dialogue!');
-					}
-				
-				})
-      }
-    });
     
     $('#selGive > option').each(function() {
       var itemID = $(this).val();
