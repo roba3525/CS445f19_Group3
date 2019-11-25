@@ -6,7 +6,7 @@
  "settings": {
   "m_runAs": 1,
   "m_phpExe": "/usr/bin/php",
-  "m_indexFile": "/srv/www/htdocs/php/deyo2303/CS445f19_Group3/WebpageFiles/queryGetItemImage.php",
+  "m_indexFile": "/srv/www/htdocs/php/deyo2303/CS445f19_Group3/WebpageFiles/getDialogue.php",
   "m_args": "",
   "m_workingDirectory": "",
   "m_projectURL": "http://127.0.0.1/php/deyo2303/CS445f19_Group3/WebpageFiles/Welcome.html",

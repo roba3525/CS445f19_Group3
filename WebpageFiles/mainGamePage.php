@@ -116,8 +116,9 @@ $(document).ready(function (){
         });
       }
     });
-  });
+			}});
   
+	//ok good
   $('#btnTakeItems').click(function() {
     var roomID = <?php echo $roomID;?>;
     var charID = <?php echo $characterID?>;
@@ -129,7 +130,8 @@ $(document).ready(function (){
         $('#taMain').append('You picked up all room items&#13;&#10;');
       }
     });
-    
+	
+		// ok good
     $.ajax({
       url: 'queryGetPlayerInv.php',
       type: "POST",
@@ -143,22 +145,19 @@ $(document).ready(function (){
         });
       }
     });
-  });
-  
-  $('#selRoomPeople').change(function() {
-    var selected = $(this).val();
-		var player = <?php echo $playerID;?>;
-    $.ajax({
-      url: 'getDialogue.php',
-      type: 'POST',
-      data: {PersonID: selected.val(), PlayerID: player},
-      success: function(result) {
-        var txtBox = $('#taMain');
-        txtBox.append(result);
-      }
-    });
-  });
-});
+	});
+		// ok good
+			$('#selRoomPeople').change(function(){
+		var person = $(this).val();
+		$.ajax({url: 'getDialogue.php', type: 'POST', data: {PersonID: person}, success: function (result){var tb = $('#taMain'); tb.append(result);}});
+	//	$('#taMain').append(person);
+	//	$('#taMain').append(player);
+		
+		});
+		// end good
+});	
+});	
+
 
 </script>
 
@@ -205,7 +204,7 @@ This is a test
            <select id='selGive'>
              <option value='-1'>Give...</option>
              <?php 
-                $rows = getRoomItems($dbh, $roomID);
+                $rows = getRoomItems($dbh, $roomID, $playerID);
                 foreach($rows as $data) {
                   print '<option disabled="disabled" VALUE=' . $data['ItemID'] . '>';
                   print $data['Name'] . '</option>';
@@ -248,6 +247,7 @@ This is a test
 						 ?>
            </select>
          </div>
+				
          <div id="itemImgWrapper"></div>
       </div>
       <div id="content_bottom"></div>

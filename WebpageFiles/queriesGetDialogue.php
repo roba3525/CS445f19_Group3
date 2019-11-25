@@ -27,8 +27,6 @@ function checkIfGivenWant ($dbh, $PersonID, $PlayerID){
 		return $retVal;
 		
 	}
-	
-}
 
 function getDefaultDialogue($dbh, $PersonID){
 		$retVal = "NONE";
@@ -45,7 +43,6 @@ function getDefaultDialogue($dbh, $PersonID){
 		return $retVal;
 		
 	}
-}
 
 // get a character's item hint if you haven't given them what they want-- under the talk selection
 function getItemHint($dbh, $PersonID){
@@ -64,7 +61,6 @@ function getItemHint($dbh, $PersonID){
 		return $retVal;
 		
 	}
-}
 // get a character's dialogue based on the item you gave them (will take) -- used in give
 
 function getWillTakeDialogue($dbh, $PersonID, $ItemID){
@@ -84,6 +80,5 @@ function getWillTakeDialogue($dbh, $PersonID, $ItemID){
 		return $retVal;
 		
 	}
-}
 
 ?>
