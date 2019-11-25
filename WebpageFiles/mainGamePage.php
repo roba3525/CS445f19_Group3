@@ -176,12 +176,16 @@ $(document).ready(function (){
 			$('#selRoomPeople').change(function(){
 		var person = $(this).val();
 		var player = <?php echo $playerID?>;
-		$.ajax({url: 'getDialogue.php', type: 'POST', data: {PersonID: person, PlayerID: player}, success: function (result){var tb = $('#taMain'); tb.append(result);}});
-	//	$('#taMain').append(person);
-	//	$('#taMain').append(player);
-		
+		$.ajax({url: 'getDialogue.php', type: 'POST', data: {PersonID: person, PlayerID: player}, success: function (result){var tb = $('#taMain'); tb.append(result); tb.append("\n");}});
 		});
 		// end good
+		$('#personSelectGive').change(function(){
+			var pl = <?php echo $playerID?>;
+			$('#taMain').append(pl);
+		/*	$.ajax({url: 'getGiveItemDropDown.php', type: 'POST', data: {PersonID: p, PlayerID: pl}, success: function(result){$.('#ItemsToGive').empty(); $.('#ItemsToGive').append(result);}});*/
+			});
+		
+		//end good
 });	
 });	
 
@@ -196,6 +200,7 @@ $(document).ready(function (){
 		<div id="header">
       <img src="images/Pacific_University_logo.svg.png" alt="Pacific University Logo" height="100%" />
       <h1>CS Dept : The Game</h1>
+		<p>	<h2><i>The fastest growing game this department has ever seen. 500 users and growing!</i></h2> </p>
       <div id='top_right'>
         <form align='right' name='frmLogout' method='post' action='Logout.html'>
           <label class="logoutPos">
@@ -274,7 +279,18 @@ This is a test
 						 ?>
            </select>
          </div>
-				
+				 <div class = "btn-group">
+				 <form id = "personSelectGive">
+						<?php
+							$rows = getRoomPeople($dbh, $roomID);
+							foreach ($rows as $data){
+								print '<input type="radio" name="person" value=' . $data['PersonID'] . '>';
+								print $data['FName'] . " " . $data['LName'] . '<br>';
+							}
+						?>
+					</form>
+					<select id="ItemsToGive"> </select>
+				 </div>
          <div id="itemImgWrapper"></div>
       </div>
       <div id="content_bottom"></div>
