@@ -11,6 +11,7 @@
 		
 			$sth->execute();
 			$sth = $dbh->prepare("SELECT LAST_INSERT_ID();");
+			$sth->execute();
 			$retVal = $sth->fetch()["LAST_INSERT_ID()"];
 			return $retVal;
 		}

@@ -53,6 +53,8 @@
       }
       else {
         $playerID = addUserPlayer($dbh, $userID, $characterName); 
+				var_dump($playerID);
+				
       }
       
       $characterID = queryGetCharacterID($dbh, $userID, $characterName);
@@ -120,7 +122,8 @@ $(document).ready(function (){
   
 	//ok good
   $('#btnTakeItems').click(function() {
-    var roomID = <?php echo $roomID;?>;
+		$('#itemImgWrapper').hide();
+    var roomID = <?php echo $roomID?>;
     var charID = <?php echo $characterID?>;
     $.ajax({
       url: 'queryAddRoomItemsToInv.php',
@@ -138,6 +141,7 @@ $(document).ready(function (){
       data: {CharacterID: charID},
       success: function(result) {
         $('#divPlayerInv').empty();
+				
         var itemIDs = JSON.parse(result);
         $.each(itemIDs, function(i, val) {
           var htmlUpdate = '<img src="getData.php?id=' +val+ '">';
@@ -149,7 +153,8 @@ $(document).ready(function (){
 		// ok good
 			$('#selRoomPeople').change(function(){
 		var person = $(this).val();
-		$.ajax({url: 'getDialogue.php', type: 'POST', data: {PersonID: person}, success: function (result){var tb = $('#taMain'); tb.append(result);}});
+		var player = <?php echo $playerID?>;
+		$.ajax({url: 'getDialogue.php', type: 'POST', data: {PersonID: person, PlayerID: player}, success: function (result){var tb = $('#taMain'); tb.append(result);}});
 	//	$('#taMain').append(person);
 	//	$('#taMain').append(player);
 		
