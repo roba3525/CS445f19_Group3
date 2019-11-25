@@ -34,8 +34,9 @@ if(  ( 	isset($_POST['txtUser']) &&
       $_SESSION['ADMIN'] = 1;
       header('Location: admin.php');
     }
-		
-		header('Location: playerOptions.php');
+    else{ 
+      header('Location: playerOptions.php'); 
+    }
 	}
 	else
 	{

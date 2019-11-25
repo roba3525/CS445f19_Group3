@@ -26,7 +26,6 @@
   if( !isset($_SESSION['VALID']) ||
 	 $_SESSION['VALID'] != 1 )
 	{
-   var_dump($_SESSION['VALID']);
 	 header('Location: Login.html');
   }
 
@@ -129,6 +128,19 @@ $(document).ready(function (){
     //$('.playerInv li').each(function() {
       //alert($(this).text());
     //});
+  });
+  
+  $('#selRoomPeople').change(function() {
+    var selected = $(this).val();
+    $.ajax({
+      url: 'queryWhatever.php',
+      type: 'POST',
+      data: {PersonID: selected.val()},
+      success: function(result) {
+        var txtBox = $('#taMain');
+        txtBox.append(result);
+      }
+    });
   });
 });
 
