@@ -13,6 +13,8 @@
   require_once('queryGetAllClasses.php');
   require_once('queryGetAllProfs.php');
   require_once('queryGetUserID.php');
+  require_once('queriesAdminUser.php');
+  require_once('queryDeleteUser.php');
   
   // authentication
   if( !isset($_SESSION['VALID']) ||
@@ -39,7 +41,19 @@
 <script type="text/javascript" src="file.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {  
-    
+    $('[id^=btnDeleteUser]').click(function() {
+      var id = $(this).val();
+      if(confirm('Are you sure?')){
+       $.ajax({
+        url: 'queryDeleteUser.php',
+        type: 'POST',
+        data: {PersonID: id},
+        success: function(result) {
+          window.location.reload(true);
+        }
+      }); 
+      }
+    });
   });
 </script>
 
@@ -66,21 +80,30 @@
       <div id="content_top"></div>
       <div id="content_main">
          <p>
-           Here you can view/delete users and/or their characters. Be careful, actions on this page <strong>cannot be undone!</strong> 
+           Here you can view/delete users and their characters. Be careful, actions on this page <strong>cannot be undone!</strong> 
          <br>
          </p>
          <br>
-         <form method="post" name="frmAdmin" action=editUsers.php>
-          
-         </form>
+          <table id='tblUsers'>
+             <tr>
+               <th>User</th>
+               <th>&nbsp;</th>
+             </tr>
+             <?php 
+               $rows = getAllUsers($dbh);
+               foreach($rows as $data) {
+                if($data['Admin'] != 1){
+                 print '<tr>';
+                 print '<td>' . $data['Username'] . '</td>';
+                 print '<td><button type=submit value=' . $data['UserID'] . ' id="btnDeleteUser' . $data['UserID'] . '" name=btn' . $data['UserID'] . '>Delete</td>';
+                 print '</tr>'; 
+                }
+               }
+             ?>
+          </table>
       </div>
       <div id="content_bottom"></div>
       <div id="footer"><h3><a href="http://www.bryantsmith.com">florida web design</a></h3></div>
-      </div>
-      <div id="leftmenu">
-        <div id="leftmenu_top"></div>
-        <div id="leftmenu_main"></div>
-        <div id="leftmenu_bottom"></div>
       </div>
    </div>
   </body>

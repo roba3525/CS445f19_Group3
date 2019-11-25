@@ -208,6 +208,10 @@ padding-left:15px;
 padding-right:15px;
 }
 
+#content_main table{
+display:inline-table;
+}
+
 #content_bottom
 {
 background-image:url(images/main_bottom.png);
@@ -230,6 +234,11 @@ font-size:12px;
 text-decoration:none;
 color:#FFF;
 }
+
+#tblUsers {
+align-content:inherit;
+float:left
+} 
 
 .action_bar
 {
@@ -341,3 +350,7 @@ padding-left:2px;
 .btn-group select:hover {
   background-color: #b5b0b0;
 }
+
+.hide {
+display:none;
+} 

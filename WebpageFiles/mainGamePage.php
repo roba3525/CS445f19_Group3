@@ -21,12 +21,14 @@
   require_once('queryGetBuildingName.php');
   require_once('queryGetRoomName.php');
 	require_once ('queriesGetRoomInfo.php');
+  require_once('queryGetCharacterID.php');
+  require_once('queryAddRoomItemsToInv.php');
+  require_once('queryGetPlayerInv.php');
 	require_once ('look.php');
 
   if( !isset($_SESSION['VALID']) ||
 	 $_SESSION['VALID'] != 1 )
 	{
-   var_dump($_SESSION['VALID']);
 	 header('Location: Login.html');
   }
 
@@ -53,6 +55,7 @@
         $playerID = addUserPlayer($dbh, $userID, $characterName); 
       }
       
+      $characterID = queryGetCharacterID($dbh, $userID, $characterName);
       $assignmentName = queryGetAssignmentByClassName($dbh, $className);
       $buildingID = queryGetBuildingID($dbh, 'Strain');
       $roomID = queryGetRoomID($dbh, 'Strain 222');
@@ -132,18 +135,43 @@ $(document).ready(function (){
   });
   
   $('#btnTakeItems').click(function() {
-    var roomID = <?php echo $roomID; ?>;
+    var roomID = <?php echo $roomID;?>;
+    var charID = <?php echo $characterID?>;
     $.ajax({
-      url: 'queryGetRoomItemsAjax.php',
+      url: 'queryAddRoomItemsToInv.php',
       type: 'POST',
-      data: {RoomID: roomID},
+      data: {RoomID: roomID, CharID: charID},
       success: function(result) {
-        alert(result);
+        $('#taMain').append('You picked up all room items&#13;&#10;');
       }
     });
-    //$('.playerInv li').each(function() {
-      //alert($(this).text());
-    //});
+    
+    $.ajax({
+      url: 'queryGetPlayerInv.php',
+      type: "POST",
+      data: {CharacterID: charID},
+      success: function(result) {
+        $('#divPlayerInv').empty();
+        var itemIDs = JSON.parse(result);
+        $.each(itemIDs, function(i, val) {
+          var htmlUpdate = '<img src="getData.php?id=' +val+ '">';
+          $('#divPlayerInv').append(htmlUpdate);
+        });
+      }
+    });
+  });
+  
+  $('#selRoomPeople').change(function() {
+    var selected = $(this).val();
+    $.ajax({
+      url: 'queryWhatever.php',
+      type: 'POST',
+      data: {PersonID: selected.val()},
+      success: function(result) {
+        var txtBox = $('#taMain');
+        txtBox.append(result);
+      }
+    });
   });
 });
 
@@ -175,9 +203,8 @@ $(document).ready(function (){
       <div id='leftmenu_top'></div>
       <div id='leftmenu_main'>
         <h3>Player Inventory</h3>
-          <ul class='playerInv'>
-            <li>test</li>
-          </ul>
+        <div id='divPlayerInv' class='playerInv'>
+        </div>
       </div>
       <div id='leftmenu_bottom'></div>
     </div>
