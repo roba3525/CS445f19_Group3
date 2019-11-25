@@ -53,8 +53,6 @@
       }
       else {
         $playerID = addUserPlayer($dbh, $userID, $characterName); 
-				var_dump($playerID);
-				
       }
       
       $characterID = queryGetCharacterID($dbh, $userID, $characterName);
@@ -76,6 +74,30 @@
 <script type="text/javascript" src="file.js"></script>
 <script type="text/javascript">
 $(document).ready(function (){
+  $('#selRooms').change(function() {
+    $('#peopleImgWrapper').empty();
+    var newRoomID = $(this).val();
+    $.ajax({
+      url: 'changeRoom.php',
+      type: 'POST',
+      data: {RoomID: newRoomID},
+      success: function(result) {
+        $('#lblCurrRoom').text('Current Room: ' + result);
+        $.ajax({
+          url: 'changePeople.php',
+          type: 'POST',
+          data: {RoomID: newRoomID},
+          success: function(result) {
+            var people = JSON.parse(result);
+            $.each(people, function(i, val) {
+              alert(val);
+          });
+          }
+        });
+      }
+    });
+  });
+  
   $('#clickLook').click(function() {
     $('#peopleImgWrapper').empty();
     $('#itemImgWrapper').empty();
