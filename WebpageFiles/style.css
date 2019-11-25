@@ -350,3 +350,7 @@ padding-left:2px;
 .btn-group select:hover {
   background-color: #b5b0b0;
 }
+
+.hide {
+display:none;
+} 
