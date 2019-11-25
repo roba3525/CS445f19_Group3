@@ -147,10 +147,11 @@ $(document).ready(function (){
   
   $('#selRoomPeople').change(function() {
     var selected = $(this).val();
+		var player = <?php echo $playerID;?>;
     $.ajax({
-      url: 'queryWhatever.php',
+      url: 'getDialogue.php',
       type: 'POST',
-      data: {PersonID: selected.val()},
+      data: {PersonID: selected.val(), PlayerID: player},
       success: function(result) {
         var txtBox = $('#taMain');
         txtBox.append(result);
