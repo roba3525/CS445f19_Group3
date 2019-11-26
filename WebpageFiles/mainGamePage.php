@@ -132,34 +132,46 @@ $(document).ready(function (){
     $('#itemImgWrapper').empty();  
     var newRoomID = $(this).val();
     $.ajax({
-      url: 'changeRoom.php',
+      url: 'checkEndGame.php',
       type: 'POST',
       data: {RoomID: newRoomID},
       success: function(result) {
-        $('#lblCurrRoom').text('Current Room: ' + result);
-        $.ajax({
-          url: 'changePeople.php',
-          type: 'POST',
-          data: {RoomID: newRoomID},
-          success: function(result) {
-            var people = JSON.parse(result);
-            $.each(people, function(i, val) {
-              peopleSelList.append('<option value=' + val.id + '>' + val.FName + ' ' + val.LName +'</option>');
-              availablePersonRdo.append('<input type="radio" name="person" id="person' + val.id + '" value=' + val.id + ' >' + val.FName + ' ' + val.LName + '<br>' );
-            });
-            $.ajax({
-              url: 'changeItems.php',
-              type: 'POST',
-              data: {RoomID: newRoomID},
-              success: function(result) {
-                var items = JSON.parse(result);
-                $.each(items, function(i, val) {
-                  $('#selGive').append('<option value=' + val.id + '>' + val.Name +'</option>');
-                });
-              }
-            });
-          }
-        });
+        if(!$.isEmptyObject(result)) {
+          $('#frmGameOver').submit();
+        }
+        else {
+          $.ajax({
+            url: 'changeRoom.php',
+            type: 'POST',
+            data: {RoomID: newRoomID},
+            success: function(result) {
+              $('#lblCurrRoom').text('Current Room: ' + result);
+              $.ajax({
+                url: 'changePeople.php',
+                type: 'POST',
+                data: {RoomID: newRoomID},
+                success: function(result) {
+                  var people = JSON.parse(result);
+                  $.each(people, function(i, val) {
+                    peopleSelList.append('<option value=' + val.id + '>' + val.FName + ' ' + val.LName +'</option>');
+                    availablePersonRdo.append('<input type="radio" name="person" id="person' + val.id + '" value=' + val.id + ' >' + val.FName + ' ' + val.LName + '<br>' );
+                  });
+                  $.ajax({
+                    url: 'changeItems.php',
+                    type: 'POST',
+                    data: {RoomID: newRoomID},
+                    success: function(result) {
+                      var items = JSON.parse(result);
+                      $.each(items, function(i, val) {
+                        $('#selGive').append('<option value=' + val.id + '>' + val.Name +'</option>');
+                      });
+                    }
+                  });
+                }
+              });
+            }
+          });
+        }
       }
     });
   });
@@ -206,7 +218,7 @@ $(document).ready(function (){
         });
       }
     });
-			}});
+   }});
   });
   
 	//ok good
@@ -394,6 +406,10 @@ $(document).ready(function (){
           <button type='button' id='btnGiveItem'>Give</button>
 				 </div>
          <div id="itemImgWrapper"></div>
+         <form id='frmGameOver' method='POST' action='endScreen.php'>
+          <input type='hidden' id='userID' name='UserID' value='<?php echo $userID; ?>'>
+          <input type='hidden' id='charID' name='CharID' value='<?php echo $characterID; ?>'>
+         </form>
       </div>
       <div id="content_bottom"></div>
       <div id="footer"><h3><a href="http://www.bryantsmith.com">florida web design</a></h3></div>

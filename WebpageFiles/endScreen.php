@@ -1,21 +1,20 @@
 <?php
-	// Author: 			Thomas Robasciotti
+	// Author: 			Julian
   // File: 				playerOptions.php
   // Date:				November 18 2019
   // Class:				CS 445
   // Project: 		Group DB Assignment
-  // Description: Sets player options after signing in
+  // Description: Display's user's score after game ends
   
   session_start();
     
  	require_once('basicErrorHandling.php');
 	require_once('connDB.php');
-  require_once('queryGetAllClasses.php');
-  require_once('queryGetAllProfs.php');
   require_once('queryGetUserID.php');
 	require_once('queryGetScore.php');
 	require_once('addUserPlayer.php');
 	require_once('queryGetFriendImages.php');
+  require_once('queryRecordFinalScore.php');
 	require_once('getData.php');
   
   // authentication
@@ -25,19 +24,16 @@
 	 header('Location: Login.html');
   }
   
-  // db connection
   $dbh = db_connect();
-	//if ('' == $userID)
-	{
-		//get ID of active user
-		$userID = queryGetUserID($dbh, $_SESSION['USERNAME']);
-	}
-		//set it as a session variable
-		$_SESSION['USERID'] = $userID;
-	$playerID = $_SESSION['PLAYERID'];
-	
-	//$playerID = addUserPlayer($dbh, )
-	//$_SESSION['PLAYERID'] = $playerID;
+  
+if((isset($_POST['UserID'])) &&
+  (isset($_POST['CharID']))) 
+  {
+    $userID = $_POST['UserID'];
+    $playerID = $_POST['CharID'];
+    
+    queryRecordFinalScore($dbh, $playerID);
+  }
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -79,7 +75,7 @@
 					<span>
 					 Your score was: 
 					 <?php 
-						$rows = queryGetScore($dbh, $userID);
+						$rows = queryGetScore($dbh, $playerID);
 						print $rows;
 						?>
 					</span>

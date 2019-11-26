@@ -21,5 +21,5 @@
 	}else{
 	   print "FILE NOT FOUND";
 	}
-  db_close();	
+  db_close($dbh);	
 ?>

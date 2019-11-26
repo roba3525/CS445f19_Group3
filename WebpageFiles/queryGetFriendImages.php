@@ -9,7 +9,7 @@
 														WHERE Gives.PersonID=People.PersonID
 														AND People.PictureID=Images.ImageID
 														AND Gives.PlayerID=:PlayerID
-														AND UserID=:UserID;");
+														AND UserID=:UserID");
     $sth -> bindValue(":PlayerID", $PlayerID);
 		$sth -> bindValue(":UserID", $UserID);
 		$sth -> execute();
