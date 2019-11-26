@@ -27,13 +27,10 @@ if(isset($_POST['PersonID']) && isset($_POST['PlayerID'])){
 		$sth -> execute();
 			while ($row = $sth -> fetch())
 		{
-			$rows[] = $row;
+			$rows[] = $row['PlayerItems.ItemID'];
 		}
 		
-		foreach ($rows as $data){
-			
-			echo '<option VALUE=' . $data['ItemID'] . '>'
-			print $data['Name'] . '</option>'
-		}
-
+		echo json_encode($rows);
+	
+}
 ?>
