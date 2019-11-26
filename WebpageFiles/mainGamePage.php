@@ -223,6 +223,12 @@ $(document).ready(function (){
       });
 		});
 		//end good
+    $('#btnGiveItem').click(function() {
+      var selectedItemID = $('#ItemsToGive').val();
+      if(selectedItemID > 0) {
+        
+      }
+    });
 });	
 
 
@@ -318,6 +324,7 @@ This is a test
 					<select id="ItemsToGive">
 					<option VALUE='-1'>Items To Give</option>
 					</select>
+          <button type='button' id='btnGiveItem'>Give</button>
 				 </div>
          <div id="itemImgWrapper"></div>
       </div>
