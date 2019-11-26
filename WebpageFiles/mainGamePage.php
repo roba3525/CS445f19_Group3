@@ -74,6 +74,7 @@
 <script type="text/javascript" src="file.js"></script>
 <script type="text/javascript">
 $(document).ready(function (){
+  $('#selRooms').val(<?php echo $roomID; ?>);
   $('#selRooms').change(function() {
     var peopleSelList = $('#selRoomPeople');
     peopleSelList.empty().append('<option selected="selected" value=-1>Talk...</option>');
@@ -158,8 +159,8 @@ $(document).ready(function (){
   
 	//ok good
   $('#btnTakeItems').click(function() {
-		$('#itemImgWrapper').empty();
-    var roomID = <?php echo $roomID?>;
+		$('#itemImgWrapper').empty();    
+    var roomID = $('#selRooms').val();
     var charID = <?php echo $characterID?>;
     $.ajax({
       url: 'queryAddRoomItemsToInv.php',
