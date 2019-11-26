@@ -53,7 +53,6 @@
       }
       else {
         $playerID = addUserPlayer($dbh, $userID, $characterName); 
-				
       }
       
       $characterID = queryGetCharacterID($dbh, $userID, $characterName);
@@ -75,6 +74,45 @@
 <script type="text/javascript" src="file.js"></script>
 <script type="text/javascript">
 $(document).ready(function (){
+  $('#selRooms').val(<?php echo $roomID; ?>);
+  $('#selRooms').change(function() {
+    var peopleSelList = $('#selRoomPeople');
+    peopleSelList.empty().append('<option selected="selected" value=-1>Talk...</option>');
+    $('#selGive').empty().append('<option selected="selected" value=-1>Give...</option>');
+    $('#peopleImgWrapper').empty();
+    var newRoomID = $(this).val();
+    $.ajax({
+      url: 'changeRoom.php',
+      type: 'POST',
+      data: {RoomID: newRoomID},
+      success: function(result) {
+        $('#lblCurrRoom').text('Current Room: ' + result);
+        $.ajax({
+          url: 'changePeople.php',
+          type: 'POST',
+          data: {RoomID: newRoomID},
+          success: function(result) {
+            var people = JSON.parse(result);
+            $.each(people, function(i, val) {
+              peopleSelList.append('<option value=' + val.id + '>' + val.FName + ' ' + val.LName +'</option>');
+            });
+            $.ajax({
+              url: 'changeItems.php',
+              type: 'POST',
+              data: {RoomID: newRoomID},
+              success: function(result) {
+                var items = JSON.parse(result);
+                $.each(items, function(i, val) {
+                  $('#selGive').append('<option value=' + val.id + '>' + val.Name +'</option>');
+                });
+              }
+            });
+          }
+        });
+      }
+    });
+  });
+  
   $('#clickLook').click(function() {
     $('#peopleImgWrapper').empty();
     $('#itemImgWrapper').empty();
@@ -121,8 +159,8 @@ $(document).ready(function (){
   
 	//ok good
   $('#btnTakeItems').click(function() {
-		$('#itemImgWrapper').hide();
-    var roomID = <?php echo $roomID?>;
+		$('#itemImgWrapper').empty();    
+    var roomID = $('#selRooms').val();
     var charID = <?php echo $characterID?>;
     $.ajax({
       url: 'queryAddRoomItemsToInv.php',
@@ -140,7 +178,6 @@ $(document).ready(function (){
       data: {CharacterID: charID},
       success: function(result) {
         $('#divPlayerInv').empty();
-				
         var itemIDs = JSON.parse(result);
         $.each(itemIDs, function(i, val) {
           var htmlUpdate = '<img src="getData.php?id=' +val+ '">';
