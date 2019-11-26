@@ -75,6 +75,7 @@
 <script type="text/javascript">
 $(document).ready(function (){
   $('#selRooms').val(<?php echo $roomID; ?>);
+  $('#selBuilding').val(<?php echo $buildingID; ?>);
   $('#selRooms').change(function() {
     var peopleSelList = $('#selRoomPeople');
     peopleSelList.empty().append('<option selected="selected" value=-1>Talk...</option>');
@@ -258,7 +259,6 @@ This is a test
               ?>
            </select>
            <select id='selBuilding'>
-             <option value='-1'>Go To Bldg...</option>
              <?php 
                 $rows = queryGetAllBuildings($dbh);
                 foreach($rows as $data) {
@@ -271,7 +271,6 @@ This is a test
          <div class="btn-group">
            <button id=btnTakeItems>Take Items</button>
            <select id='selRooms'>
-             <option value='-1'>Go To Room...</option>
              <?php 
                 $rows = queryGetRoomsByBuildingID($dbh, $buildingID);
                 foreach($rows as $data) {
