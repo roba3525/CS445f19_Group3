@@ -48,7 +48,7 @@
         url: 'queryDeleteUser.php',
         type: 'POST',
         data: {PersonID: id},
-        success: function(result) {
+        success: function() {
           window.location.reload(true);
         }
       }); 

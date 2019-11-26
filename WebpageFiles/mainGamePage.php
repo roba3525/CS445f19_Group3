@@ -76,11 +76,16 @@
 $(document).ready(function (){
   $('#selRooms').val(<?php echo $roomID; ?>);
   $('#selBuilding').val(<?php echo $buildingID; ?>);
+  $('#selGive').hide();
   $('#selRooms').change(function() {
     var peopleSelList = $('#selRoomPeople');
+    var availablePersonRdo = $('#personSelectGive');
     peopleSelList.empty().append('<option selected="selected" value=-1>Talk...</option>');
     $('#selGive').empty().append('<option selected="selected" value=-1>Give...</option>');
+    $('#ItemsToGive').empty().append('<option value=-1>Items To Give</option>');
     $('#peopleImgWrapper').empty();
+    availablePersonRdo.empty();
+    $('#itemImgWrapper').empty();  
     var newRoomID = $(this).val();
     $.ajax({
       url: 'changeRoom.php',
@@ -96,6 +101,7 @@ $(document).ready(function (){
             var people = JSON.parse(result);
             $.each(people, function(i, val) {
               peopleSelList.append('<option value=' + val.id + '>' + val.FName + ' ' + val.LName +'</option>');
+              availablePersonRdo.append('<input type="radio" name="person" id="person' + val.id + '" value=' + val.id + ' >' + val.FName + ' ' + val.LName + '<br>' );
             });
             $.ajax({
               url: 'changeItems.php',
@@ -157,6 +163,7 @@ $(document).ready(function (){
       }
     });
 			}});
+  });
   
 	//ok good
   $('#btnTakeItems').click(function() {
@@ -188,33 +195,36 @@ $(document).ready(function (){
     });
 	});
 		// ok good
-			$('#selRoomPeople').change(function(){
+  $('#selRoomPeople').change(function(){
+    $('#ItemsToGive').empty().append('<option value=-1>Items To Give</option>');
 		var person = $(this).val();
 		var player = <?php echo $playerID?>;
-		$.ajax({url: 'getDialogue.php', type: 'POST', data: {PersonID: person, PlayerID: player}, success: function (result){var tb = $('#taMain'); tb.append(result); tb.append("\n");}});
+		$.ajax({
+      url: 'getDialogue.php',
+      type: 'POST',
+      data: {PersonID: person, PlayerID: player},
+      success: function (result){
+        var tb = $('#taMain');
+        tb.append(result);
+        tb.append("\n");
+        $.ajax({
+          url: 'getGiveItemDropDown.php',
+          type: 'POST',
+          data: {PersonID: person, PlayerID: player},
+          success: function(result) {
+            var itemIDs = JSON.parse(result);
+            $.each(itemIDs, function(i, val) {
+              var htmlUpdate = '<option value=' + val.id + '>' + val.name +'</option>';
+              $('#ItemsToGive').append(htmlUpdate);
+            });
+          }
+        });
+        }
+      });
 		});
-		// end good
-		$('#personSelectGive').change(function(){
-		
-			var pl = <?php echo $playerID?>;
-			var p = $("input[name='person']:checked").val();
-			
-			$.ajax({url: 'getGiveItemDropDown.php', type: 'POST', data: {PersonID: p, PlayerID: pl}, success: function(result){
-			//	$('#ItemsToGive').empty();
-			//	$('#ItemsToGive').append('<option VALUE="-1">hello</option>');
-				var items = JSON.parse(result);
-				$.each(items, function (i, val){
-					var newOption = '<option VALUE="' +val+ '">ok</option>';
-					 $('#ItemsToGive').append(newOption);
-					});
-				
-				}
-				});
-			});
-		
 		//end good
 });	
-});	
+
 
 
 </script>
@@ -305,16 +315,6 @@ This is a test
            </select>
          </div>
 				 <div class = "btn-group">
-				 <form id = "personSelectGive">
-						<?php
-							$rows = getRoomPeople($dbh, $roomID);
-							foreach ($rows as $data){
-								print '<input type="radio" name="person" value=' . $data['PersonID'] . '>';
-								print $data['FName'] . " " . $data['LName'] . '<br>';
-							}
-						?>
-						
-					</form>
 					<select id="ItemsToGive">
 					<option VALUE='-1'>Items To Give</option>
 					</select>

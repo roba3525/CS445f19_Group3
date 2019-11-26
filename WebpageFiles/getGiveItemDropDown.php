@@ -14,20 +14,14 @@ if(isset($_POST['PersonID']) && isset($_POST['PlayerID'])){
 	$rows = Array();
 	
 	//query for all the items this person wants/will take vs. the items in this player's inventory
-		$sth = $dbh -> prepare("SELECT PlayerItems.ItemID
-														FROM Items, PlayerItems WHERE PlayerItems.ItemID=Items.ItemID AND PlayerID =:PlayerID AND PlayerItems.ItemID IN (SELECT People.ItemID
-														FROM People, Items, WillTakeItem
-														WHERE People.ItemID=Items.ItemID
-														OR WillTakeItem.ItemID=Items.ItemID
-														AND WillTakeItem.PersonID= :PersonID
-														AND People.PersonID = :PersonID); ");
+		$sth = $dbh -> prepare("SELECT PlayerItems.ItemID, Items.Name FROM PlayerItems, Items WHERE PlayerItems.ItemID = Items.ItemID AND PlayerID = :PlayerID AND (PlayerItems.ItemID IN (SELECT ItemID FROM WillTakeItem WHERE PersonID = :PersonID) OR (PlayerItems.ItemID IN (SELECT ItemID FROM People WHERE PersonID = :PersonID)))");
 														
 		$sth -> bindValue(":PersonID", $personID);
 		$sth -> bindValue(":PlayerID", $playerID);
 		$sth -> execute();
-			while ($row = $sth -> fetch())
+    while ($row = $sth -> fetch())
 		{
-			$rows[] = $row['PlayerItems.ItemID'];
+			$rows[] = array('id' => $row['ItemID'], 'name' => $row['Name']);
 		}
 		
 		echo json_encode($rows);
