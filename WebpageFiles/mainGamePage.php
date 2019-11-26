@@ -195,9 +195,21 @@ $(document).ready(function (){
 		});
 		// end good
 		$('#personSelectGive').change(function(){
+		
 			var pl = <?php echo $playerID?>;
-			$('#taMain').append(pl);
-		/*	$.ajax({url: 'getGiveItemDropDown.php', type: 'POST', data: {PersonID: p, PlayerID: pl}, success: function(result){$.('#ItemsToGive').empty(); $.('#ItemsToGive').append(result);}});*/
+			var p = $("input[name='person']:checked").val();
+			
+			$.ajax({url: 'getGiveItemDropDown.php', type: 'POST', data: {PersonID: p, PlayerID: pl}, success: function(result){
+			//	$('#ItemsToGive').empty();
+			//	$('#ItemsToGive').append('<option VALUE="-1">hello</option>');
+				var items = JSON.parse(result);
+				$.each(items, function (i, val){
+					var newOption = '<option VALUE="' +val+ '">ok</option>';
+					 $('#ItemsToGive').append(newOption);
+					});
+				
+				}
+				});
 			});
 		
 		//end good
@@ -301,8 +313,11 @@ This is a test
 								print $data['FName'] . " " . $data['LName'] . '<br>';
 							}
 						?>
+						
 					</form>
-					<select id="ItemsToGive"> </select>
+					<select id="ItemsToGive">
+					<option VALUE='-1'>Items To Give</option>
+					</select>
 				 </div>
          <div id="itemImgWrapper"></div>
       </div>
