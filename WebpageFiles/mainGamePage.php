@@ -24,7 +24,6 @@
   require_once('queryGetCharacterID.php');
   require_once('queryAddRoomItemsToInv.php');
   require_once('queryGetPlayerInv.php');
-	require_once ('look.php');
 
   if( !isset($_SESSION['VALID']) ||
 	 $_SESSION['VALID'] != 1 )
@@ -77,14 +76,59 @@ $(document).ready(function (){
   $('#selRooms').val(<?php echo $roomID; ?>);
   $('#selBuilding').val(<?php echo $buildingID; ?>);
   $('#selGive').hide();
+  
+  $('#selBuilding').change(function() {
+    var newBldgID = $(this).val();
+    $.ajax({
+      url: 'changeBuilding.php',
+      type: 'POST',
+      data: {BldgID: newBldgID},
+      success: function(results) {
+        $('#lblCurrBldg').text('Current Building: ' + results);
+        $('#selRooms').empty();
+        $.ajax({
+          url: 'getBuildingRooms.php',
+          type: 'POST',
+          data: {BldgID: newBldgID},
+          success: function(result) {
+            var rooms = JSON.parse(result);
+            $.each(rooms, function(i, val) {
+              if(i == 0 || newBldgID == <?php echo $buildingID ?>) {
+               $('#selRooms').append('<option value=' + val.id + '>' + val.name + '</option>'); 
+              } 
+              else{
+                $('#selRooms').append('<option disabled="disabled" value=' + val.id + '>' + val.name + '</option>'); 
+              }
+            });
+            $('#selRooms').change();
+            var characterID = <?php echo $characterID;?>;
+            $.ajax({
+              url: 'getUnlockedRooms.php',
+              type: 'POST',
+              data: {BldgID: newBldgID, PlayerID: characterID},
+              success: function(result) {
+                var unlockedRoomIDs = JSON.parse(result);
+                $.each(unlockedRoomIDs, function(i, val) {
+                  $('#selRooms > option').each(function() {
+                    if(val.id == $(this).val()){
+                      $(this).prop('disabled', false);
+                    }
+                  });
+                });
+              }
+            });
+          }
+        });
+      }
+    });
+  });
+  
   $('#selRooms').change(function() {
     var peopleSelList = $('#selRoomPeople');
-    var availablePersonRdo = $('#personSelectGive');
     peopleSelList.empty().append('<option selected="selected" value=-1>Talk...</option>');
     $('#selGive').empty().append('<option selected="selected" value=-1>Give...</option>');
     $('#ItemsToGive').empty().append('<option value=-1>Items To Give</option>');
     $('#peopleImgWrapper').empty();
-    availablePersonRdo.empty();
     $('#itemImgWrapper').empty();  
     var newRoomID = $(this).val();
     $.ajax({
@@ -224,9 +268,33 @@ $(document).ready(function (){
 		});
 		//end good
     $('#btnGiveItem').click(function() {
+      var player = <?php echo $playerID?>;
       var selectedItemID = $('#ItemsToGive').val();
+      var person = $('#selRoomPeople').val();
       if(selectedItemID > 0) {
-        
+        $.ajax({
+          url: 'giveItem.php',
+          type: 'POST',
+          data: {PlayerID: player, ItemID: selectedItemID, PersonID: person},
+          success: function(results) {
+            var tb = $('#taMain');
+            tb.append(results);
+            tb.append("\n");
+                $.ajax({
+                  url: 'queryGetPlayerInv.php',
+                  type: "POST",
+                  data: {CharacterID: player},
+                  success: function(result) {
+                    $('#divPlayerInv').empty();
+                    var itemIDs = JSON.parse(result);
+                    $.each(itemIDs, function(i, val) {
+                      var htmlUpdate = '<img src="getData.php?id=' +val+ '">';
+                      $('#divPlayerInv').append(htmlUpdate);
+                    });
+                  }
+                });
+          }
+        });
       }
     });
 });	
@@ -271,7 +339,6 @@ $(document).ready(function (){
       <div id="content_top"></div>
       <div id="content_main">
          <textarea readonly='readonly' id='taMain' name='gameInfo' rows='20' cols='91'>
-This is a test
          </textarea>
          <div id="peopleImgWrapper"></div>
          <div class="btn-group">
@@ -290,7 +357,7 @@ This is a test
              <?php 
                 $rows = queryGetAllBuildings($dbh);
                 foreach($rows as $data) {
-                  print '<option disabled="disabled" VALUE=' . $data['BuildingID'] . '>';
+                  print '<option VALUE=' . $data['BuildingID'] . '>';
                   print $data['Name'] . '</option>';
                 }
               ?>

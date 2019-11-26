@@ -66,9 +66,7 @@ function getItemHint($dbh, $PersonID){
 function getWillTakeDialogue($dbh, $PersonID, $ItemID){
 		$retVal = "NONE";
 		
-		$sth = $dbh -> prepare("SELECT Phrase FROM WillTakeItem, DialogueOptions
-										WHERE WillTakeItem.DialogueID=DialogueOptions.DialogueID
-										AND PersonID= :PersonID AND ItemID = :ItemID;");
+		$sth = $dbh -> prepare("SELECT Phrase FROM WillTakeItem, DialogueOptions WHERE WillTakeItem.DialogueID = DialogueOptions.DialogueID AND PersonID = :PersonID AND ItemID = :ItemID");
 		$sth -> bindValue(":PersonID", $PersonID);
 		$sth -> bindValue(":ItemID", $ItemID);
 		$sth -> execute();

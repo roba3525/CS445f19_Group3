@@ -10,7 +10,9 @@
     
 		$roomID = $_POST['RoomID'];
     $charID = $_POST['CharID'];
-		$sth = $dbh->prepare("INSERT IGNORE INTO PlayerItems (PlayerID, ItemID) SELECT :charID, ItemID FROM RoomItems WHERE RoomID = :roomID");
+		$sth = $dbh->prepare("INSERT INTO PlayerItems (PlayerID, ItemID)" .
+                         " SELECT :charID, ItemID FROM RoomItems" . 
+                         " WHERE RoomID = :roomID");
 		$sth->bindValue(":roomID", $roomID);
     $sth->bindValue(":charID", $charID);
 		
