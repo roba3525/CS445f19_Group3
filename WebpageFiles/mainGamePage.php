@@ -75,6 +75,8 @@
 <script type="text/javascript">
 $(document).ready(function (){
   $('#selRooms').change(function() {
+    var peopleSelList = $('#selRoomPeople');
+    peopleSelList.empty().append('<option selected="selected" value=-1>Talk...</option>');
     $('#peopleImgWrapper').empty();
     var newRoomID = $(this).val();
     $.ajax({
@@ -90,8 +92,8 @@ $(document).ready(function (){
           success: function(result) {
             var people = JSON.parse(result);
             $.each(people, function(i, val) {
-              alert(val);
-          });
+              peopleSelList.append('<option value=' + val.id + '>' + val.FName + ' ' + val.LName +'</option>');
+            });
           }
         });
       }
@@ -163,7 +165,6 @@ $(document).ready(function (){
       data: {CharacterID: charID},
       success: function(result) {
         $('#divPlayerInv').empty();
-				
         var itemIDs = JSON.parse(result);
         $.each(itemIDs, function(i, val) {
           var htmlUpdate = '<img src="getData.php?id=' +val+ '">';

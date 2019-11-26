@@ -6,11 +6,13 @@
 	$dbh = db_connect();
 
 	if( isset($_POST['RoomID']) ) {
-
+    $results = array();
     $roomID = $_POST['RoomID'];
 		$rows = getRoomPeople($dbh, $roomID);
-    
-    print json_encode($rows['PersonID']);
+    foreach($rows as $data) {
+      $results[] = array('id' => $data['PersonID'], 'FName' => $data['FName'], 'LName' => $data['LName']);
+    }
+    print json_encode($results);
 	}
   
   db_close($dbh);
